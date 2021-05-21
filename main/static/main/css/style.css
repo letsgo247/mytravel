@@ -2,6 +2,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2rem;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+header h1 {
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 5rem;
 }
 
 section {
