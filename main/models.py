@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-class entity(models.Model):
-    kor = models.BooleanField()
-    usa = models.BooleanField()
-    jpn = models.BooleanField()
-    hkh = models.BooleanField()
+class Entity(models.Model):
+    kor = models.BooleanField(default=False)
+    usa = models.BooleanField(default=False)
+    jpn = models.BooleanField(default=False)
+    hkg = models.BooleanField(default=False)

@@ -20,38 +20,8 @@
     <script src="{% static 'main/js/main.js' %}" defer></script>
 </head>
 
-<body>
-    <header>
-        <a href=""><h1>여최몇?</h1></a>
-    </header>
+{% block content %}
 
-
-    <section>
-        <main>
-            <button class="kor">대한민국</button>
-            <button class="usa">미국</button>
-            <br>
-            <button class="jpn">일본</button>
-            <button class="hkg">홍콩</button>
-        </main>
-
-        <aside>
-            가본 나라
-            <ol>
-                
-            </ol>
-        </aside>
-    </section>
-
-
-    <footer>
-        <input type="submit" value="저장">
-    </footer>
-
-    <hr style="width:90vw">
-    <div>
-        참가자 수 및 통계
-    </div>
-</body>
+{% endblock %}
 
 </html>

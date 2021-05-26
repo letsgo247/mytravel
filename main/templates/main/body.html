@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<body>
+    <header>
+        <a href=""><h1>여최몇?</h1></a>
+    </header>
+
+
+    <section>
+        <main>
+            <button class="kor">대한민국</button>
+            <button class="usa">미국</button>
+            <br>
+            <button class="jpn">일본</button>
+            <button class="hkg">홍콩</button>
+            <br>
+
+            <form action="/" method="post">
+                {% csrf_token %}
+                <input type="checkbox" name="kor" value="대한민국">
+                <input type="checkbox" name="usa" value="미국">
+                <input type="checkbox" name="jpn" value="일본">
+                <input type="checkbox" name="hkg" value="홍콩">
+                <input type="submit" value="보내기">
+            </form>
+        </main>
+
+        <aside>
+            가본 나라
+            <ol>
+
+            </ol>
+        </aside>
+    </section>
+
+
+    <footer>
+        <form action="/" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="저장">
+        </form>
+        {{ countries }}
+        <br>
+        {% for entity in all %}
+            <br>
+            [{{entity.id}}]
+            kor: {{ entity.kor }},
+            usa: {{ entity.usa }},
+            jpn: {{ entity.jpn }},
+            hkg: {{ entity.hkg }}
+        {% endfor %}
+    </footer>
+
+    <hr style="width:90vw">
+    <div>
+        참가자 수 및 통계
+    </div>
+</body>
+
+{% endblock %}

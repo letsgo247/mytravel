@@ -8,8 +8,13 @@ body {
 
 header h1 {
     font-family: 'East Sea Dokdo', cursive;
+    color:black;
     font-size: 5rem;
 }
+
+header a {
+    text-decoration:none;
+    }
 
 section {
     display: flex;
@@ -18,11 +23,12 @@ section {
 
 button {
     height: 5rem;
-    width: 5rem;    
+    width: 5rem;
 }
 
 footer {
     padding: 5rem;
+    text-align: center;
 }
 
 .kor:hover {
