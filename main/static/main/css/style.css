@@ -39,13 +39,36 @@ footer {
 }
 
 .country {
-    fill: none;
+    fill: ivory;
     stroke: black;
 }
 
+/*
 .country:hover {
-    fill: red;
+    fill: gold;
+    fill-opacity: 0.5;
 }
+
+.selected {
+    fill: orange;
+    }
+*/
+
+.hover-info {
+  width: 150px;
+  z-index: 10001;
+  position: absolute;
+  background: aliceblue;
+  border: 2px solid black;
+  border-radius: 4px;
+  overflow: visible;
+  padding: 0.2rem;
+}
+
+
+
+
+
 
 aside{
     display: flex;
