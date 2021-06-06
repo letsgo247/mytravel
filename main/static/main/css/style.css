@@ -38,25 +38,13 @@ footer {
     background-color:blue
 }
 
-.usa:hover {
-    background-color:yellow
-}
-.usa.selected {
-    background-color:yellow
+.country {
+    fill: none;
+    stroke: black;
 }
 
-.jpn:hover {
-    background-color:red
-}
-.jpn.selected {
-    background-color:red
-}
-
-.hkg:hover {
-    background-color:green
-}
-.hkg.selected {
-    background-color:green
+.country:hover {
+    fill: red;
 }
 
 aside{

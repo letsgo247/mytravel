@@ -6,6 +6,7 @@ from main.models import Entity
 
 countries = []
 all_fields = Entity._meta.fields  # Entity의 fields name list 생성
+# print(all_fields)
 for value in all_fields:
     if value.name != 'id':
         countries.append(value.name)
@@ -38,9 +39,8 @@ def index(request):
         for i in countries:     # 일단 default 상태 확인
             print(i, entity.__getattribute__(i))
 
-        entity.save()
+        # entity.save()
 
-        # return render(request, 'main/body.html', context={'text':'저장 되었습니다!'})
         return redirect('/')
 
     else:
