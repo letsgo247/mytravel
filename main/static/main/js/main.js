@@ -55,7 +55,7 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
                 d3.select(target)
                     .classed('selected', d3.select(target).classed('selected') ? false : true)
                     .style('fill', 'orange');
-                    console.log(target)
+                    // console.log(target)
 
             })
 
@@ -76,54 +76,68 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
 
 //기존 파트
 
-const button = document.querySelector('main')
+const gLayer = document.querySelector('g')
 const ol = document.querySelector('ol')
-// console.log(ol);
+console.log(gLayer);
+console.log(ol);
 const array = [];
 
-function button_listener () {
-    button.addEventListener('click', event=>{
-    // console.log(event.target.innerText);
-    let code = event.target.classList[0];
-    let name = event.target.innerText
+function gLayer_listener () {
+    gLayer.addEventListener('click', event=>{
+    let data = event.target.__data__;
 
-    let node = document.querySelector(`.${code}`);
-    node.classList.toggle('selected');
+    let name = data.properties.name;
+    let code = name.replaceAll(" ","").replaceAll('.','')   //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
     
-    if (array.includes(code)) {
+    if (array.includes(name)) {
         //있으면
         //어레이에서 삭제
-        //리스트에서 삭제
-        let idx = array.indexOf(code);
+        let idx = array.indexOf(name);
         if (idx > -1) array.splice(idx, 1);
+        // console.log(array)
 
+        //리스트에서 삭제
         const li = document.querySelector(`li.${code}`)
-        console.log(li)
         ol.removeChild(li);
+
 
 
     } else {
         //없으면
-        //어레이에 추가
-        //리스트에 추가
-        array.push(code);
 
+        //어레이에 추가
+        array.push(name);
+        // console.log(array)
+
+        //리스트에 추가
         const li = document.createElement('li');
-        console.log(li)
         li.classList = code;
         li.innerText = name;
         ol.appendChild(li);
         
-    }
-    console.log(code,name);
-    console.log(array)
+    }})
+}
 
+function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
+    $('.submit').on('click', () => {
+        console.log('submit!')
+
+        $.ajax(
+            {
+                type:"POST",
+                url:"./",
+                data: {array: array},
+                dataType: "text",
+            }
+        ).done(() => {alert("성공!")})
+        .fail(() => {alert("실패ㅠ")})
     })
 }
 
 
 function init() {
-    button_listener()
+    gLayer_listener()
+    submit_listener()
 }
 
-//init();   //일단 꺼둠.
+init();

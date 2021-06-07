@@ -10,7 +10,7 @@
 
     <section>
         <main>
-            <svg width="600px" height="400px"></svg>
+            <svg width="900px" height="600px"></svg>
 
             <form action="/" method="post">
                 {% csrf_token %}
@@ -18,16 +18,23 @@
                 <input type="checkbox" name="usa" value="미국">
                 <input type="checkbox" name="jpn" value="일본">
                 <input type="checkbox" name="hkg" value="홍콩">
-                <input type="submit" value="보내기">
+                <input type="checkbox" name="kor" value="대한민국">
+                <input type="checkbox" name="usa" value="미국">
+                <input type="checkbox" name="jpn" value="일본">
+                <input type="checkbox" name="hkg" value="홍콩">
+                <input class='submit' type='button' value="결과 저장">
+                <!-- type submit으로 하면 post가 두번 가서, 그냥 button으로 하고 ajax로 post 처리! ... 만약 새로고침이 필요하다면, 다시 submit으로 바꾸면 될듯?     -->
             </form>
         </main>
 
-        <aside>
+        <br>
+
+        <div>
             가본 나라
             <ol>
 
             </ol>
-        </aside>
+        </div>
     </section>
 
 

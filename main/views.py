@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 from main.models import Entity
@@ -12,11 +13,13 @@ for value in all_fields:
         countries.append(value.name)
 print('countries:',countries)
 
-
+@csrf_exempt
 def index(request):
     if request.method == 'POST' :
         post = request.POST
         print('POST:', post)
+        list = request.POST.getlist('array[]')
+        print('list:',list)
 
 
 
@@ -25,21 +28,23 @@ def index(request):
 
         entity = Entity()
 
-        print('1.Before')
-        for i in countries:     # 일단 default 상태 확인
-            print(i, entity.__getattribute__(i))
+        # print('1.Before')
+        # for i in countries:     # 일단 default 상태 확인
+        #     print(i, entity.__getattribute__(i))
 
-        for i in post:
-            try:
-                entity.__setattr__(i,True)
-            except:
-                pass
+        # for i in post:
+        #     try:
+        #         entity.__setattr__(i,True)
+        #     except:
+        #         pass
 
-        print('2.After')
-        for i in countries:     # 일단 default 상태 확인
-            print(i, entity.__getattribute__(i))
+        # print('2.After')
+        # for i in countries:     # 일단 default 상태 확인
+        #     print(i, entity.__getattribute__(i))
 
         # entity.save()
+
+        print('괜히 지랄 ㅎㅎ')
 
         return redirect('/')
 
