@@ -73,21 +73,19 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
 // console.log(countryFlagEmoji.get("US"));
 
 
-
-let emojiJson = {}
-
-fetch("./static/main/js/emoji.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
-  .then(response => response.json())
-  .then(json => {emojiJson = json})
-
-
 function filterIt(searchValue) {      // searchValue 를 갖는 object 리턴하는 함수
-return emojiJson.filter(function(obj) {
-    return Object.keys(obj).some(function(key) {
-    return obj[key].includes(searchValue);
-    })
-});
-}
+    return countryFlagEmoji.list.filter(function(obj) {
+      return Object.keys(obj).some(function(key) {
+        return obj[key].includes(searchValue);
+      })
+    });
+  }
+
+
+fetch("./emoji.json")
+  .then(response => response.json())
+  .then(json => console.log(json))
+
 
 
 
@@ -95,8 +93,8 @@ return emojiJson.filter(function(obj) {
 
 const gLayer = document.querySelector('g')
 const ol = document.querySelector('ol')
-// console.log(gLayer);
-// console.log(ol);
+console.log(gLayer);
+console.log(ol);
 const array = [];
 
 function gLayer_listener () {
@@ -133,9 +131,8 @@ function gLayer_listener () {
         flag = filterIt(name)[0].emoji
         console.log(filterIt(name))
         console.log(flag)
-        li.innerHTML = `${flag} ${name}`
+        li.innerHTML = `${flag}${name}`
         ol.appendChild(li);
-        hover_listener(li,name,code);
         
     }})
 }
@@ -154,35 +151,6 @@ function submit_listener () {   // 선택된 array ajax 처리로 post 보내주
         ).done(() => {alert("성공!")})
         .fail(() => {alert("실패ㅠ")})
     })
-};
-
-
-function hover_listener (li,name,code) {
-    li.addEventListener('mouseenter', () => {
-        console.log('hover!')
-        console.log(li.innerHTML);
-        span = ' <span>🗑️</span>'
-        li.innerHTML += span
-    })
-
-    li.addEventListener('mouseleave', () => {
-        console.log('leave!')
-        console.log(li.innerHTML);
-        li.innerHTML = li.innerHTML.replace(span,'')
-    })
-
-    const can = document.querySelectorAll('span')
-    can.addEventListener('click', () => {
-
-        let idx = array.indexOf(name);
-        if (idx > -1) array.splice(idx, 1);
-
-        //리스트에서 삭제
-        const li = document.querySelector(`li.${code}`)
-        ol.removeChild(li);
-    })
-
-    
 }
 
 

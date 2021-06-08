@@ -13,7 +13,7 @@ for value in all_fields:
         countries.append(value.name)
 print('countries:',countries)
 
-@csrf_exempt
+@csrf_exempt    # decorater. 아래 정의되는 함수를 둘러싸면서, 미리 정의된 기능을 수행. 여기서는 csrf 검사 면제.
 def index(request):
     if request.method == 'POST' :
         post = request.POST
