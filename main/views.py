@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 import json
 
-with open("./staticfiles/main/js/emoji.json", 'rt', encoding='UTF8') as json_file:
-    json_data = json.load(json_file)
+with open("./main/static/main/js/data.json", 'rt', encoding='UTF8') as json_file:
+    dataJson = json.load(json_file)
 
 # Create your views here.
 from main.models import Entity
@@ -24,7 +24,6 @@ def index(request):
         print('POST:', post)
         list = request.POST.array
         print('list:',list)
-
 
 
         all = Entity.objects.all()
@@ -60,27 +59,43 @@ def index(request):
 
 def result(request):
     if request.method == 'POST' :
-        # post = request.POST
-        # print('POST:', post)
         array = request.POST['array']
         array2 = request.POST['array2']
-        print('array:',array)
-        print('array2:',array2)
+        # print('array:',array)
+        # print('array2:',array2)
         array = array.split(",")    # string to array
         array2 = array2.split(",")    # string to array
 
-        for (i,k) in enumerate(array2):
-            print(type(k))
-            array[i] = k
+        # for (i,k) in enumerate(array2):
+        #     print(type(k))
+        #     array[i] = k
 
+        print(dataJson)
         print('array:',array)
         print('array2:',array2)
 
-        number = len(array)
-        print(number)
-        ratio1 = number / 200 * 100
-
+        area = 0
         
+        # for obj in dataJson:
+        #     try:
+        #         print(obj['area'])
+        #         area += obj['area']
+        #     except:
+        #         pass
+
+        for country in array:
+            for obj in dataJson:
+                if country == obj['name']:
+                    area += obj['area']
+        
+        print(area)
+
+
+        number = len(array)
+        # print(number)
+        ratio1 = round(number / 177 * 100, 2)   # %로 소수점 2자리까지 출력
+        ratio2 = round(area / 149390550.0 * 100, 2)
+
         all = Entity.objects.all()
 
-        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'ratio1':ratio1})
+        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'ratio1':ratio1, 'ratio2':ratio2})

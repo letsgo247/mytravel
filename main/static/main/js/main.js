@@ -37,11 +37,12 @@ d3.json('./static/main/js/countries-110m.json')
             })
 
             .on('mousemove', ({pageX, pageY, target}) => {
+                let obj = filterIt(target.__data__.properties.name)[0]
                 tooltipSelection
                     .style('top', `${pageY + 20}px`)
                     .style('left', `${pageX - 10}px`)
                     .style('z-index', 100)
-                    .text(`${filterIt(target.__data__.properties.name)[0].nameKr} (${target.__data__.properties.name})`)  //__data__는... 대충 target을 만든 data를 출력해줌?;;
+                    .html(`<img src="${obj.url}" alt=${obj.name}> ${obj.nameKr} (${obj.name})`)  //__data__는... 대충 target을 만든 data를 출력해줌?;;
             })
 
             .on('mouseleave', ({target}) => {
