@@ -31,8 +31,8 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
         tooltipEventListeners = g.selectAll('.country')
             .on('mouseenter', ({target}) => {   // 'destructuring assignment: https://stackoverflow.com/a/33705619/8551901 (콜백 변수에 {key} 를 써주면, 들어올 변수 object의 object.target을 호출함! 여기서는 첫번째 변수인 event의 target을 불러오는 거였음!)
                 tooltipSelection.style('visibility', 'visible');
-                d3.select(target)
-                    .style('fill', 'gold');
+                // d3.select(target)
+                //     .style('fill', 'gold');
             })
 
             .on('mousemove', ({pageX, pageY, target}) => {
@@ -45,21 +45,21 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
 
             .on('mouseleave', ({target}) => {
                 tooltipSelection.style('visibility', 'hidden');
-                d3.select(target)
-                    .style('fill', d3.select(target).classed('selected') ? 'orange' : 'ivory')
+                // d3.select(target)
+                //     .style('fill', d3.select(target).classed('selected') ? 'orange' : 'ivory')
             })
 
 
-        clickListeneres = g.selectAll('.country')
-            .on('click', ({target}) => {
-                d3.select(target)
-                    .classed('selected', d3.select(target).classed('selected') ? false : true)
-                    .style('fill', 'orange');
-                    // console.log(target)
+        // clickListeneres = g.selectAll('.country')
+        //     .on('click', ({target}) => {
+        //         d3.select(target)
+        //             .classed('selected', d3.select(target).classed('selected') ? false : true)
+        //             .style('fill', 'orange');
+        //             // console.log(target)
 
-            })
+        //     })
 
-        g.selectAll('.selected')
+        // g.selectAll('.selected')
 
 
         })
@@ -108,6 +108,10 @@ function gLayer_listener () {
     
     if (array.includes(name)) { 
         //기존에 있으면
+        //일단 색깔 지우고
+        // event.target.setAttribute('style', 'fill:ivory')
+        event.target.classList.remove('selected')
+
         //어레이에서 삭제
         let idx = array.indexOf(name);
         if (idx > -1) array.splice(idx, 1);
@@ -120,6 +124,11 @@ function gLayer_listener () {
 
     } else {
         //기존에 없으면
+        //일단 색깔 칠하고
+        console.log(event.target)
+        // event.target.setAttribute('style', 'fill:orange')
+        event.target.classList.add('selected')
+
         //어레이에 추가
         array.push(name);   
 
@@ -142,8 +151,6 @@ function gLayer_listener () {
 
 
 
-
-
 // <Ajax 파트>
 function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
     $('.submit').on('click', () => {
@@ -160,8 +167,6 @@ function submit_listener () {   // 선택된 array ajax 처리로 post 보내주
         .fail(() => {alert("실패ㅠ")})
     })
 };
-
-
 
 
 

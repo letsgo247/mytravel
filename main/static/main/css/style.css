@@ -75,16 +75,16 @@ svg {
     stroke: black;
 }
 
-/*
+
 .country:hover {
     fill: gold;
-    fill-opacity: 0.5;
+    /* fill-opacity: 0.5; */
 }
 
 .selected {
     fill: orange;
     }
-*/
+
 
 .hover-info {
   width: 150px;
