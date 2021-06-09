@@ -68,12 +68,9 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
 
 
 
-// console.log(countryFlagEmoji.data);
-// console.log(countryFlagEmoji.list);
-// console.log(countryFlagEmoji.get("US"));
 
 
-
+// <이모지 로딩 위한 빌드업>
 let emojiJson = {}
 
 fetch("./static/main/js/emoji.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
@@ -91,7 +88,10 @@ return emojiJson.filter(function(obj) {
 
 
 
-//기존 파트
+
+
+
+// <array handling 파트>
 
 const gLayer = document.querySelector('g')
 const ol = document.querySelector('ol')
@@ -106,12 +106,11 @@ function gLayer_listener () {
     let name = data.properties.name;
     let code = name.replaceAll(" ","").replaceAll('.','')   //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
     
-    if (array.includes(name)) {
+    if (array.includes(name)) { 
         //기존에 있으면
         //어레이에서 삭제
         let idx = array.indexOf(name);
         if (idx > -1) array.splice(idx, 1);
-        // console.log(array)
 
         //리스트에서 삭제
         const li = document.querySelector(`li.${code}`)
@@ -121,10 +120,8 @@ function gLayer_listener () {
 
     } else {
         //기존에 없으면
-
         //어레이에 추가
-        array.push(name);
-        // console.log(array)
+        array.push(name);   
 
         //리스트에 추가
         const li = document.createElement('li');
@@ -140,6 +137,14 @@ function gLayer_listener () {
     }})
 }
 
+
+
+
+
+
+
+
+// <Ajax 파트>
 function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
     $('.submit').on('click', () => {
         console.log('submit!')
@@ -157,12 +162,35 @@ function submit_listener () {   // 선택된 array ajax 처리로 post 보내주
 };
 
 
+
+
+
+
+
+
+// <휴지통 파트>
 function hover_listener (li,name,code) {
     li.addEventListener('mouseenter', () => {
         console.log('hover!')
         console.log(li.innerHTML);
         span = ' <span>🗑️</span>'
         li.innerHTML += span
+
+        const can = document.querySelector('ol span')
+        console.log(can)
+
+        can.addEventListener('click', () => {
+            console.log('can!')
+
+            let idx = array.indexOf(name);
+            if (idx > -1) array.splice(idx, 1);
+
+            //리스트에서 삭제
+            const li = document.querySelector(`li.${code}`)
+            ol.removeChild(li);
+
+            console.log(array)
+        })
     })
 
     li.addEventListener('mouseleave', () => {
@@ -170,20 +198,9 @@ function hover_listener (li,name,code) {
         console.log(li.innerHTML);
         li.innerHTML = li.innerHTML.replace(span,'')
     })
-
-    const can = document.querySelectorAll('span')
-    can.addEventListener('click', () => {
-
-        let idx = array.indexOf(name);
-        if (idx > -1) array.splice(idx, 1);
-
-        //리스트에서 삭제
-        const li = document.querySelector(`li.${code}`)
-        ol.removeChild(li);
-    })
-
-    
 }
+
+
 
 
 function init() {
