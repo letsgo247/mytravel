@@ -108,44 +108,51 @@ function gLayer_listener () {
     
     if (array.includes(name)) { 
         //기존에 있으면
-        //일단 색깔 지우고
-        // event.target.setAttribute('style', 'fill:ivory')
-        event.target.classList.remove('selected')
-
-        //어레이에서 삭제
-        let idx = array.indexOf(name);
-        if (idx > -1) array.splice(idx, 1);
-
-        //리스트에서 삭제
-        const li = document.querySelector(`li.${code}`)
-        ol.removeChild(li);
-
-
+        removeCountry(name,code)
 
     } else {
         //기존에 없으면
-        //일단 색깔 칠하고
-        console.log(event.target)
-        // event.target.setAttribute('style', 'fill:orange')
-        event.target.classList.add('selected')
-
-        //어레이에 추가
-        array.push(name);   
-
-        //리스트에 추가
-        const li = document.createElement('li');
-        li.classList = code;
-        // li.innerText = name;
-        flag = filterIt(name)[0].emoji
-        console.log(filterIt(name))
-        console.log(flag)
-        li.innerHTML = `${flag} ${name}`
-        ol.appendChild(li);
-        hover_listener(li,name,code);
-        
+        addCountry(event,name,code)
     }})
 }
 
+
+
+function addCountry (event,name,code) {
+    //일단 색깔 칠하고
+    event.target.classList.add('selected');
+    event.target.id = code;
+
+    //어레이에 추가
+    array.push(name);   
+
+    //리스트에 추가
+    const li = document.createElement('li');
+    li.classList = code;
+    flag = filterIt(name)[0].emoji
+    li.innerHTML = `${flag} ${name}`
+    ol.appendChild(li);
+
+    //추가된 리스트에 휴지통 method 추가
+    hover_listener(li,name,code);
+}
+
+
+
+
+function removeCountry (name,code) {
+    //일단 색깔 지우고
+    target = document.querySelector(`#${code}`);
+    target.classList.remove('selected')
+
+    //어레이에서 삭제
+    let idx = array.indexOf(name);
+    if (idx > -1) array.splice(idx, 1);
+
+    //리스트에서 삭제
+    const li = document.querySelector(`li.${code}`)
+    ol.removeChild(li);
+}
 
 
 
@@ -176,31 +183,16 @@ function submit_listener () {   // 선택된 array ajax 처리로 post 보내주
 // <휴지통 파트>
 function hover_listener (li,name,code) {
     li.addEventListener('mouseenter', () => {
-        console.log('hover!')
-        console.log(li.innerHTML);
         span = ' <span>🗑️</span>'
         li.innerHTML += span
 
         const can = document.querySelector('ol span')
-        console.log(can)
-
-        can.addEventListener('click', () => {
-            console.log('can!')
-
-            let idx = array.indexOf(name);
-            if (idx > -1) array.splice(idx, 1);
-
-            //리스트에서 삭제
-            const li = document.querySelector(`li.${code}`)
-            ol.removeChild(li);
-
-            console.log(array)
+        can.addEventListener('click', (event) => {
+            removeCountry(name,code)
         })
     })
 
     li.addEventListener('mouseleave', () => {
-        console.log('leave!')
-        console.log(li.innerHTML);
         li.innerHTML = li.innerHTML.replace(span,'')
     })
 }
