@@ -13,7 +13,8 @@
             <span style="font-weight: bold"><가본 나라></span>
             <ol>
                 {% for emoji_country in array2 %}
-                    <li>{{emoji_country}}</li>
+                    <li>{{emoji_country|safe}}</li>
+                    <!-- by safe filter, string to html -->
                 {% endfor %}
             </ol>
         </aside>

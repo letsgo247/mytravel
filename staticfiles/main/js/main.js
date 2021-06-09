@@ -2,7 +2,12 @@
 
 const svg = d3.select('svg');
 
-const projection = d3.geoMercator();
+const projection = d3.geoMercator()
+                        .center([-30, 30])
+                        .scale(300)
+                        .rotate([-150,0]);
+// const projection = d3.geoNaturalEarth1();
+// const projection = d3.geoEqualEarth();
 const pathGenerator = d3.geoPath().projection(projection);
 
 const g = svg.append('g');
@@ -12,7 +17,7 @@ svg.call(d3.zoom().on('zoom', (event) => {
 }))
 
 
-d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+d3.json('./static/main/js/countries-110m.json')
     .then(data => {
         const countries = topojson.feature(data, data.objects.countries);
 
@@ -20,8 +25,6 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
             .enter().append('path')
             .attr('class', 'country')
             .attr('d', d=>pathGenerator(d))
-//            .append('title')
-//            .text(d => d.properties.name)
 
         tooltipSelection = d3.select('body')
             .append('div')
@@ -31,8 +34,6 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
         tooltipEventListeners = g.selectAll('.country')
             .on('mouseenter', ({target}) => {   // 'destructuring assignment: https://stackoverflow.com/a/33705619/8551901 (콜백 변수에 {key} 를 써주면, 들어올 변수 object의 object.target을 호출함! 여기서는 첫번째 변수인 event의 target을 불러오는 거였음!)
                 tooltipSelection.style('visibility', 'visible');
-                d3.select(target)
-                    .style('fill', 'gold');
             })
 
             .on('mousemove', ({pageX, pageY, target}) => {
@@ -45,57 +46,44 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
 
             .on('mouseleave', ({target}) => {
                 tooltipSelection.style('visibility', 'hidden');
-                d3.select(target)
-                    .style('fill', d3.select(target).classed('selected') ? 'orange' : 'ivory')
             })
-
-
-        clickListeneres = g.selectAll('.country')
-            .on('click', ({target}) => {
-                d3.select(target)
-                    .classed('selected', d3.select(target).classed('selected') ? false : true)
-                    .style('fill', 'orange');
-                    // console.log(target)
-
-            })
-
-        g.selectAll('.selected')
-
-
         })
 
 
 
 
 
-// console.log(countryFlagEmoji.data);
-// console.log(countryFlagEmoji.list);
-// console.log(countryFlagEmoji.get("US"));
+
+
+// <이모지 로딩 위한 빌드업>
+let flagsJson = {}
+
+fetch("./static/main/js/flags.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
+  .then(response => response.json())
+  .then(json => {flagsJson = json})
 
 
 function filterIt(searchValue) {      // searchValue 를 갖는 object 리턴하는 함수
-    return countryFlagEmoji.list.filter(function(obj) {
-      return Object.keys(obj).some(function(key) {
-        return obj[key].includes(searchValue);
-      })
+    return flagsJson.filter(function(obj) {
+        return Object.keys(obj).some(function(key) {
+        return obj[key] == searchValue;
+        })
     });
-  }
-
-
-fetch("./emoji.json")
-  .then(response => response.json())
-  .then(json => console.log(json))
+}
 
 
 
 
-//기존 파트
+
+
+// <array handling 파트>
 
 const gLayer = document.querySelector('g')
 const ol = document.querySelector('ol')
-console.log(gLayer);
-console.log(ol);
+// console.log(gLayer);
+// console.log(ol);
 const array = [];
+const array2 = [];
 
 function gLayer_listener () {
     gLayer.addEventListener('click', event=>{
@@ -104,54 +92,100 @@ function gLayer_listener () {
     let name = data.properties.name;
     let code = name.replaceAll(" ","").replaceAll('.','')   //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
     
-    if (array.includes(name)) {
+    if (array.includes(name)) { 
         //기존에 있으면
-        //어레이에서 삭제
-        let idx = array.indexOf(name);
-        if (idx > -1) array.splice(idx, 1);
-        // console.log(array)
-
-        //리스트에서 삭제
-        const li = document.querySelector(`li.${code}`)
-        ol.removeChild(li);
-
-
+        removeCountry(name,code)
 
     } else {
         //기존에 없으면
-
-        //어레이에 추가
-        array.push(name);
-        // console.log(array)
-
-        //리스트에 추가
-        const li = document.createElement('li');
-        li.classList = code;
-        // li.innerText = name;
-        flag = filterIt(name)[0].emoji
-        console.log(filterIt(name))
-        console.log(flag)
-        li.innerHTML = `${flag}${name}`
-        ol.appendChild(li);
-        
+        addCountry(event,name,code)
     }})
 }
 
-function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
-    $('.submit').on('click', () => {
-        console.log('submit!')
 
-        $.ajax(
-            {
-                type:"POST",
-                url:"./",
-                data: {array: array},
-                dataType: "text",
-            }
-        ).done(() => {alert("성공!")})
-        .fail(() => {alert("실패ㅠ")})
+
+function addCountry (event,name,code) {
+    //일단 색깔 칠하고
+    event.target.classList.add('selected');
+    event.target.id = code;
+    // event.target.setAttribute('style', 'fill:orange')
+
+    //어레이에 추가
+    array.push(name);
+
+    //리스트에 추가
+    const li = document.createElement('li');
+    li.classList = code;
+    flag_url = filterIt(name)[0].file_url
+    li.innerHTML = `<img src="${flag_url}" alt=${name}> ${name}`
+    ol.appendChild(li);
+
+    array2.push(li.innerHTML);
+
+    //추가된 리스트에 휴지통 method 추가
+    hover_listener(li,name,code);
+}
+
+
+
+
+function removeCountry (name,code) {
+    //일단 색깔 지우고
+    target = document.querySelector(`#${code}`);
+    target.classList.remove('selected')
+
+    //어레이에서 삭제
+    let idx = array.indexOf(name);
+    if (idx > -1) array.splice(idx, 1);
+    
+    //리스트에서 삭제
+    const li = document.querySelector(`li.${code}`)
+    ol.removeChild(li);
+
+    let idx2 = array2.indexOf(li);
+    if (idx2 > -1) array2.splice(idx2,1);
+}
+
+
+
+
+
+// <수동 post 파트>
+function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
+    $('.submit').on('mouseover', () => {
+        $('.input')[0].value = array
+        console.log($('.input')[0].value)
+
+        $('.input2')[0].value = array2
+        console.log($('.input2')[0].value)
+
+
     })
 }
+
+
+
+
+
+
+// <휴지통 파트>
+function hover_listener (li,name,code) {
+    li.addEventListener('mouseenter', () => {
+        span = ' <span>🗑️</span>'
+        li.innerHTML += span
+
+        const can = document.querySelector('ol span')
+        can.addEventListener('click', (event) => {
+            removeCountry(name,code)
+        })
+    })
+
+    li.addEventListener('mouseleave', () => {
+        li.innerHTML = li.innerHTML.replace(span,'')
+    })
+}
+
+
 
 
 function init() {

@@ -41,7 +41,7 @@ d3.json('./static/main/js/countries-110m.json')
                     .style('top', `${pageY + 20}px`)
                     .style('left', `${pageX - 10}px`)
                     .style('z-index', 100)
-                    .text(target.__data__.properties.name)  //__data__는... 대충 target을 만든 data를 출력해줌?;;
+                    .text(`${filterIt(target.__data__.properties.name)[0].nameKr} (${target.__data__.properties.name})`)  //__data__는... 대충 target을 만든 data를 출력해줌?;;
             })
 
             .on('mouseleave', ({target}) => {
@@ -56,19 +56,19 @@ d3.json('./static/main/js/countries-110m.json')
 
 
 // <이모지 로딩 위한 빌드업>
-let emojiJson = {}
+let dataJson = {}
 
-fetch("./static/main/js/emoji.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
+fetch("./static/main/js/data.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
   .then(response => response.json())
-  .then(json => {emojiJson = json})
+  .then(json => {dataJson = json})
 
 
 function filterIt(searchValue) {      // searchValue 를 갖는 object 리턴하는 함수
-return emojiJson.filter(function(obj) {
-    return Object.keys(obj).some(function(key) {
-    return obj[key].includes(searchValue);
-    })
-});
+    return dataJson.filter(function(obj) {
+        return Object.keys(obj).some(function(key) {
+        return obj[key] == searchValue;
+        })
+    });
 }
 
 
@@ -116,12 +116,12 @@ function addCountry (event,name,code) {
     //리스트에 추가
     const li = document.createElement('li');
     li.classList = code;
-    flag = filterIt(name)[0].emoji
-    li.innerHTML = `${flag} ${name}`
+    url = filterIt(name)[0].url
+    nameKr = filterIt(name)[0].nameKr
+    li.innerHTML = `<img src="${url}" alt=${name}> ${nameKr}`
     ol.appendChild(li);
 
     array2.push(li.innerHTML);
-    console.log(array2);   
 
     //추가된 리스트에 휴지통 method 추가
     hover_listener(li,name,code);
@@ -143,9 +143,8 @@ function removeCountry (name,code) {
     const li = document.querySelector(`li.${code}`)
     ol.removeChild(li);
 
-    let idx2 = array2.indexOf(li);
+    let idx2 = array2.indexOf(li.innerHTML);
     if (idx2 > -1) array2.splice(idx2,1);
-    console.log(array2);
 }
 
 

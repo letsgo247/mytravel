@@ -2,17 +2,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:none;
+    margin:1rem;
     font-family: 'Nanum Gothic', sans-serif;
+    text-align: center;
+    height: 100vh;
 }
 
 header {
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 1rem; */
 }
 header h1 {
     font-family: 'East Sea Dokdo', cursive;
     color:black;
     font-size: 5rem;
+    margin: 0rem;
 }
 
 header a {
@@ -24,9 +30,8 @@ section {
     /* flex-direction: column; */
     /* align-items: center; */
     padding: 1rem;
-    margin: 1rem;
+    margin: 0 1rem;
     width: 100vw;
-    height: 70vh;
     max-width: 1280px;
 }
 
@@ -36,8 +41,10 @@ button {
 }
 
 footer {
-    padding: 5rem;
-    text-align: center;
+    padding: 1rem;
+    /* position: absolute;
+    left: 0;
+    bottom: 0; */
 }
 
 
@@ -50,7 +57,7 @@ main {
 aside{
     width: 20%;
     min-width: 100px;
-    background-color:rgb(228, 206, 206);
+    background-color:rgb(235, 224, 224);
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
@@ -68,6 +75,7 @@ svg {
     background-color: paleturquoise;
     width: 100%;
     height: 100%;
+    min-height: 50vh;
 }
 
 .country {
@@ -75,16 +83,16 @@ svg {
     stroke: black;
 }
 
-/*
+
 .country:hover {
     fill: gold;
-    fill-opacity: 0.5;
+    /* fill-opacity: 0.5; */
 }
 
 .selected {
     fill: orange;
     }
-*/
+
 
 .hover-info {
   width: 150px;
@@ -98,3 +106,10 @@ svg {
 }
 
 
+span {
+    cursor: pointer;
+}
+
+img {
+    width:1rem;
+}

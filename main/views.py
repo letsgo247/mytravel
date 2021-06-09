@@ -64,8 +64,15 @@ def result(request):
         # print('POST:', post)
         array = request.POST['array']
         array2 = request.POST['array2']
+        print('array:',array)
+        print('array2:',array2)
         array = array.split(",")    # string to array
         array2 = array2.split(",")    # string to array
+
+        for (i,k) in enumerate(array2):
+            print(type(k))
+            array[i] = k
+
         print('array:',array)
         print('array2:',array2)
 

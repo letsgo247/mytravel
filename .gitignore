@@ -4,3 +4,14 @@ db.sqlite3
 /venv/
 *.pyc
 __pycache__
+temp/area.json
+temp/area&continent.json
+temp/continent.json
+temp/emoji.json
+temp/en_kr.json
+temp/flags.json
+temp/json_merge.py
+temp/json_modify.py
+temp/json_test.py
+temp/old_data.json
+temp/the.json
