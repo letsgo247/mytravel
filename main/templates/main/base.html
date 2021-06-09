@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 
@@ -27,8 +27,33 @@
 
 </head>
 
-{% block content %}
+<body>
+    <header>
+        <a href="/"><h1>여최몇?</h1></a>
+    </header>
 
-{% endblock %}
+    {% block content %}
+
+    {% endblock %}
+
+    <hr style="width:90vw">
+    
+    <footer>
+        <strong><참가자 수 및 통계></strong>
+        <br>
+        참가자 수: {{all.count}}
+        <br>
+        총 국가 수: {{all}}
+
+        <!-- {% for entity in all %}
+            <br>
+            [{{entity.id}}]
+            kor: {{ entity.kor }},
+            usa: {{ entity.usa }},
+            jpn: {{ entity.jpn }},
+            hkg: {{ entity.hkg }}
+        {% endfor %} -->
+    </footer>
+</body>
 
 </html>

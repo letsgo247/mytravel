@@ -3,6 +3,8 @@
 const svg = d3.select('svg');
 
 const projection = d3.geoMercator();
+// const projection = d3.geoNaturalEarth1();
+// const projection = d3.geoEqualEarth();
 const pathGenerator = d3.geoPath().projection(projection);
 
 const g = svg.append('g');
@@ -140,20 +142,11 @@ function removeCountry (name,code) {
 
 // <Ajax 파트>
 function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
-    $('.submit').on('click', () => {
-        console.log('submit!')
-
-        $.ajax(
-            {
-                type:"POST",
-                url:"./",
-                data: {array: array},
-                dataType: "text",
-            }
-        ).done(() => {alert("성공!")})
-        .fail(() => {alert("실패ㅠ")})
-    })
-};
+    $('.submit').on('mouseover', () => {
+        $('.input')[0].value = JSON.stringify(array)    //에러 방지 위해 json 느낌으로 변환
+        console.log($('.input')[0].value)
+            })
+}
 
 
 

@@ -14,6 +14,7 @@ app_name = 'main'
 
 urlpatterns = [
     url(r'^$', views.index, name = 'index'),
+    url(r'^result$', views.result, name = 'result'),
     # url(r'^generate.+$', views.generate, name = 'generate'),
     # url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]

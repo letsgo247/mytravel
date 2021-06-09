@@ -5,19 +5,20 @@ body {
     margin:1rem;
     font-family: 'Nanum Gothic', sans-serif;
     text-align: center;
+    height: 100vh;
 }
 
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem;
+    /* margin: 1rem; */
 }
 header h1 {
     font-family: 'East Sea Dokdo', cursive;
     color:black;
     font-size: 5rem;
-    margin: none;
+    margin: 0rem;
 }
 
 header a {
@@ -31,7 +32,7 @@ section {
     padding: 1rem;
     margin: 0 1rem;
     width: 100vw;
-    height: 70vh;
+    min-height: 60vh;
     max-width: 1280px;
 }
 
@@ -41,8 +42,10 @@ button {
 }
 
 footer {
-    padding: 0rem;
-    text-align: center;
+    padding: 1rem;
+    /* position: absolute;
+    left: 0;
+    bottom: 0; */
 }
 
 

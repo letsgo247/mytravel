@@ -2,13 +2,8 @@
 
 {% block content %}
 
-<body>
-    <header>
-        <a href=""><h1>여최몇?</h1></a>
-        <div>그 동안 여행했던 나라를 모두 선택해주세요!<br>
-            재미있는 통계 결과를 알려드립니다.</div>
-    </header>
-
+    <div style="margin:1rem">그 동안 여행했던 나라를 모두 선택해주세요!<br>
+        재미있는 통계 결과를 알려드립니다.</div>
 
     <section>
         <main>
@@ -23,28 +18,10 @@
     </section>
 
     
-    <form action="/" method="post">
+    <form action="/result" method="post">
         {% csrf_token %}
-        <input class='submit' type='button' value="결과 저장">
-        <!-- type submit으로 하면 post가 두번 가서, 그냥 button으로 하고 ajax로 post 처리! ... 만약 새로고침이 필요하다면, 다시 submit으로 바꾸면 될듯?     -->
+        <input class='input' type="hidden" name='array' value='temp'>
+        <input class='submit' type='submit' value="결과 저장">
     </form>
-
-
-
-    <hr style="width:90vw">
-    
-    <footer>
-        참가자 수 및 통계
-        <br>
-        {% for entity in all %}
-            <br>
-            [{{entity.id}}]
-            kor: {{ entity.kor }},
-            usa: {{ entity.usa }},
-            jpn: {{ entity.jpn }},
-            hkg: {{ entity.hkg }}
-        {% endfor %}
-    </footer>
-</body>
 
 {% endblock %}
