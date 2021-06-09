@@ -20,8 +20,6 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
             .enter().append('path')
             .attr('class', 'country')
             .attr('d', d=>pathGenerator(d))
-//            .append('title')
-//            .text(d => d.properties.name)
 
         tooltipSelection = d3.select('body')
             .append('div')
@@ -31,8 +29,6 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
         tooltipEventListeners = g.selectAll('.country')
             .on('mouseenter', ({target}) => {   // 'destructuring assignment: https://stackoverflow.com/a/33705619/8551901 (콜백 변수에 {key} 를 써주면, 들어올 변수 object의 object.target을 호출함! 여기서는 첫번째 변수인 event의 target을 불러오는 거였음!)
                 tooltipSelection.style('visibility', 'visible');
-                // d3.select(target)
-                //     .style('fill', 'gold');
             })
 
             .on('mousemove', ({pageX, pageY, target}) => {
@@ -45,23 +41,7 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
 
             .on('mouseleave', ({target}) => {
                 tooltipSelection.style('visibility', 'hidden');
-                // d3.select(target)
-                //     .style('fill', d3.select(target).classed('selected') ? 'orange' : 'ivory')
             })
-
-
-        // clickListeneres = g.selectAll('.country')
-        //     .on('click', ({target}) => {
-        //         d3.select(target)
-        //             .classed('selected', d3.select(target).classed('selected') ? false : true)
-        //             .style('fill', 'orange');
-        //             // console.log(target)
-
-        //     })
-
-        // g.selectAll('.selected')
-
-
         })
 
 
