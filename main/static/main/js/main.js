@@ -2,7 +2,10 @@
 
 const svg = d3.select('svg');
 
-const projection = d3.geoMercator();
+const projection = d3.geoMercator()
+                        .center([-30, 30])
+                        .scale(300)
+                        .rotate([-150,0]);
 // const projection = d3.geoNaturalEarth1();
 // const projection = d3.geoEqualEarth();
 const pathGenerator = d3.geoPath().projection(projection);
@@ -14,7 +17,7 @@ svg.call(d3.zoom().on('zoom', (event) => {
 }))
 
 
-d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+d3.json('./static/main/js/countries-110m.json')
     .then(data => {
         const countries = topojson.feature(data, data.objects.countries);
 
@@ -80,6 +83,7 @@ const ol = document.querySelector('ol')
 // console.log(gLayer);
 // console.log(ol);
 const array = [];
+const array2 = [];
 
 function gLayer_listener () {
     gLayer.addEventListener('click', event=>{
@@ -104,9 +108,10 @@ function addCountry (event,name,code) {
     //일단 색깔 칠하고
     event.target.classList.add('selected');
     event.target.id = code;
+    // event.target.setAttribute('style', 'fill:orange')
 
     //어레이에 추가
-    array.push(name);   
+    array.push(name);
 
     //리스트에 추가
     const li = document.createElement('li');
@@ -114,6 +119,9 @@ function addCountry (event,name,code) {
     flag = filterIt(name)[0].emoji
     li.innerHTML = `${flag} ${name}`
     ol.appendChild(li);
+
+    array2.push(li.innerHTML);
+    console.log(array2);   
 
     //추가된 리스트에 휴지통 method 추가
     hover_listener(li,name,code);
@@ -130,22 +138,31 @@ function removeCountry (name,code) {
     //어레이에서 삭제
     let idx = array.indexOf(name);
     if (idx > -1) array.splice(idx, 1);
-
+    
     //리스트에서 삭제
     const li = document.querySelector(`li.${code}`)
     ol.removeChild(li);
+
+    let idx2 = array2.indexOf(li);
+    if (idx2 > -1) array2.splice(idx2,1);
+    console.log(array2);
 }
 
 
 
 
 
-// <Ajax 파트>
+// <수동 post 파트>
 function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
     $('.submit').on('mouseover', () => {
-        $('.input')[0].value = JSON.stringify(array)    //에러 방지 위해 json 느낌으로 변환
+        $('.input')[0].value = array
         console.log($('.input')[0].value)
-            })
+
+        $('.input2')[0].value = array2
+        console.log($('.input2')[0].value)
+
+
+    })
 }
 
 

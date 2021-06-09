@@ -6,14 +6,23 @@
 
     <section>
         <main>
-            <svg></svg>
+            <img></img>
         </main>
 
         <aside>
             <span style="font-weight: bold"><가본 나라></span>
             <ol>
+                {% for emoji_country in array2 %}
+                    <li>{{emoji_country}}</li>
+                {% endfor %}
             </ol>
         </aside>
-    </section>    
+    </section>
+    
+    <div>
+        여행한 국가 수: {{ number}}<br>
+        여행한 국가 비율(국가 수 기준): {{ ratio1 }}%<br>
+        여행한 국가 비율(면적 기준): {{ ratio2 }}<br>
+    </div>
 
 {% endblock %}

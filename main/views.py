@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
+import json
+
+with open("./staticfiles/main/js/emoji.json", 'rt', encoding='UTF8') as json_file:
+    json_data = json.load(json_file)
 
 # Create your views here.
 from main.models import Entity
@@ -56,9 +60,20 @@ def index(request):
 
 def result(request):
     if request.method == 'POST' :
-        post = request.POST
-        print('POST:', post)
+        # post = request.POST
+        # print('POST:', post)
         array = request.POST['array']
+        array2 = request.POST['array2']
+        array = array.split(",")    # string to array
+        array2 = array2.split(",")    # string to array
         print('array:',array)
+        print('array2:',array2)
 
-        return render(request, 'main/result.html')
+        number = len(array)
+        print(number)
+        ratio1 = number / 200 * 100
+
+        
+        all = Entity.objects.all()
+
+        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'ratio1':ratio1})
