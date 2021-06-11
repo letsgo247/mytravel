@@ -144,7 +144,14 @@ function removeCountry (name,code) {
     const li = document.querySelector(`li.${code}`)
     ol.removeChild(li);
 
-    let idx2 = array2.indexOf(li.innerHTML);
+    let innerHTML = li.innerHTML
+    
+    if (innerHTML.includes('/span')) {
+        console.log(true);
+        innerHTML = innerHTML.slice(0,-17);
+    }   // 휴지통으로 삭제 시 list의 span 땜에 에러나는거 방지용!
+
+    let idx2 = array2.indexOf(innerHTML);
     if (idx2 > -1) array2.splice(idx2,1);
 }
 

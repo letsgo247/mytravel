@@ -70,7 +70,7 @@ def result(request):
         #     print(type(k))
         #     array[i] = k
 
-        print(dataJson)
+        # print(dataJson)
         print('array:',array)
         print('array2:',array2)
 
@@ -88,7 +88,7 @@ def result(request):
                 if country == obj['name']:
                     area += obj['area']
         
-        print(area)
+        # print(area)
 
 
         number = len(array)
