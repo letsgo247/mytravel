@@ -2,28 +2,39 @@
 
 {% block content %}
 
-    <div style="margin:1rem">통계 결과!</div>
+<div style="margin:1rem">통계 결과!</div>
 
-    <section>
-        <main>
-            <img></img>
-        </main>
+<section>
+    <main>
+        <img></img>
+    </main>
 
-        <aside>
-            <span style="font-weight: bold"><가본 나라></span>
-            <ol>
-                {% for emoji_country in array2 %}
-                    <li>{{emoji_country|safe}}</li>
-                    <!-- by safe filter, string to html -->
-                {% endfor %}
-            </ol>
-        </aside>
-    </section>
+    <aside>
+        <p style="font-weight: bold">
+            <가본 나라>
+        </p>
+        <ol>
+            {% for emoji_country in array2 %}
+            <li>{{emoji_country|safe}}</li>
+            <!-- by safe filter, string to html -->
+            {% endfor %}
+        </ol>
+    </aside>
+</section>
+
+<div>
+    <canvas id="ContinentsChart"></canvas>
+</div>
+
+
+<div>
+    여행한 국가 수: {{ number }}<br>
+    여행한 국가 비율(국가 수 기준): {{ ratio1 }}%<br>
+    여행한 국가 비율(면적 기준): {{ ratio2 }}%<br>
+    대륙별: {{ continentsRatio }}<br>
+    <!-- 아시아: {{continents.Asia}} -->
+    <input class='input' type="hidden" id='continentsRatio' value='{{ continentsRatio }}'>
     
-    <div>
-        여행한 국가 수: {{ number}}<br>
-        여행한 국가 비율(국가 수 기준): {{ ratio1 }}%<br>
-        여행한 국가 비율(면적 기준): {{ ratio2 }}%<br>
-    </div>
+</div>
 
 {% endblock %}

@@ -18,6 +18,7 @@ for value in all_fields:
 # print('countries:',countries)
 
 
+
 def index(request):
     if request.method == 'POST' :
         post = request.POST
@@ -59,6 +60,8 @@ def index(request):
 
 def result(request):
     if request.method == 'POST' :
+        continents = {'Asia':0, 'Europe':0, 'Oceania':0, 'North America':0, 'South America':0, 'Africa':0, 'Antarctica':0}
+
         array = request.POST['array']
         array2 = request.POST['array2']
         # print('array:',array)
@@ -85,10 +88,22 @@ def result(request):
 
         for country in array:
             for obj in dataJson:
-                if country == obj['name']:
-                    area += obj['area']
-        
+                if country == obj['name']:  # 있으면
+                    area += obj['area']     # 선택 면적 합계
+                    continents[obj['continent']] += 1   # 대륙별 집계
+
         # print(area)
+        # print(continents)
+
+
+        # 비율 계산하는 함수
+        continentsRatio = []
+        continentsTotal = sum(continents.values())
+        for (value) in continents.values():
+            ratio = round(value/continentsTotal * 100, 2)
+            continentsRatio.append(ratio)
+
+        # print(continentsRatio)
 
 
         number = len(array)
@@ -98,4 +113,4 @@ def result(request):
 
         all = Entity.objects.all()
 
-        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'ratio1':ratio1, 'ratio2':ratio2})
+        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'ratio1':ratio1, 'ratio2':ratio2, 'continentsRatio':continentsRatio})
