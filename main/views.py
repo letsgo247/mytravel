@@ -113,4 +113,4 @@ def result(request):
 
         all = Entity.objects.all()
 
-        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'ratio1':ratio1, 'ratio2':ratio2, 'continentsRatio':continentsRatio})
+        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'area':area, 'ratio1':ratio1, 'ratio2':ratio2, 'continentsRatio':continentsRatio})

@@ -23,6 +23,8 @@
 </section>
 
 <div>
+    <canvas id="numberChart"></canvas>
+    <canvas id="areaChart"></canvas>
     <canvas id="ContinentsChart"></canvas>
 </div>
 
@@ -33,6 +35,8 @@
     여행한 국가 비율(면적 기준): {{ ratio2 }}%<br>
     대륙별: {{ continentsRatio }}<br>
     <!-- 아시아: {{continents.Asia}} -->
+    <input class='input' type="hidden" id='number' value='{{ number }}'>
+    <input class='input' type="hidden" id='area' value='{{ area }}'>
     <input class='input' type="hidden" id='continentsRatio' value='{{ continentsRatio }}'>
     
 </div>
