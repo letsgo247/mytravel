@@ -1712,7 +1712,7 @@
         "id": "807",
         "order": 171,
         "name": "Macedonia",
-        "url": "//upload.wikimedia.org/wikipedia/commons/f/f8/Flag_of_Macedonia.svg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_North_Macedonia.svg",
         "area": 25713.0,
         "continent": "Europe",
         "nameKr": "마케도니아 공화국",
@@ -1734,11 +1734,17 @@
         "name": "Montenegro",
         "url": "//upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Montenegro.svg",
         "nameKr": "몬테네그로",
+        "area": 13812.0,
         "alpha3": "MNE"
     },
     {
+        "id": "383",
         "order": 174,
-        "name": "Kosovo"
+        "name": "Kosovo",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_Kosovo.svg",
+        "nameKr": "코소보",
+        "area": 10887.0,
+        "alpha3": "XKX"
     },
     {
         "id": "780",

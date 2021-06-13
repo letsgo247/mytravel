@@ -131,12 +131,12 @@ var areaChart = new Chart(
 
 
 //<continent>
-const continentsCount = document.getElementById('continentsCount')
-// console.log(continentsCount.value)
-continentsCountData = continentsCount.value.slice(1, -1).split(',')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
-// console.log(continentsCountData)
-continentsCountData = continentsCountData.map(data => Number(data))
-// console.log(continentsCountData)
+const continentsRatio = document.getElementById('continentsRatio')
+// console.log(continentsRatio.value)
+continentsRatioData = continentsRatio.value.slice(1, -1).split(',')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
+console.log(continentsRatioData)
+continentsRatioData = continentsRatioData.map(data => Number(data))
+console.log(continentsRatioData)
 
 
 
@@ -160,7 +160,7 @@ var ContinentsChart = new Chart(
             datasets: [{
                 backgroundColor: ['#ffbe22', '#60aaf3', '#948dec', '#e53949', '#91bf39', '#fe7c02', '#4836f3'],
                 borderColor: 'white',
-                data: continentsCountData
+                data: continentsRatioData
             }]
         },
 
@@ -186,7 +186,7 @@ var ContinentsChart = new Chart(
                             // console.log(item);
                             let label = item.label;
                             let value = item.parsed;
-                            return label + ': ' + value + ' 개국';
+                            return label + ': ' + value + '%';
                         }
                     }
                 },

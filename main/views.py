@@ -2,59 +2,66 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 import json
 
-with open("./main/static/main/js/data.json", 'rt', encoding='UTF8') as json_file:
-    dataJson = json.load(json_file)
-
 # Create your views here.
 from main.models import Entity
 
 
-countries = []
+
+# json load하는 함수
+def load_json(path):
+    with open(path, 'rt', encoding='UTF8') as json_file:
+        return json.load(json_file)
+
+data_json = load_json("./main/static/main/js/data.json")
+
+
+
+# DB 접근
 all_fields = Entity._meta.fields  # Entity의 fields name list 생성
-# print(all_fields)
-for value in all_fields:
-    if value.name != 'id':
-        countries.append(value.name)
-# print('countries:',countries)
+CountriesNumber = len(all_fields)   # db에 등록된 국가 수 count
+# Entity.objects.filter(id=5).delete()  # record 삭제
+
 
 
 
 def index(request):
-    if request.method == 'POST' :
-        post = request.POST
-        print('POST:', post)
-        list = request.POST.array
-        print('list:',list)
+    all = Entity.objects.all()
+    return render(request, 'main/body.html', context={'all':all})
+        
+        
+        
+    # if request.method == 'POST' :
+    # post = request.POST
+    # print('POST:', post)
+    # list = request.POST.array
+    # print('list:',list)
 
 
-        all = Entity.objects.all()
-        print('Entity.objects.all()', all)
+    # all = Entity.objects.all()
+    # print('Entity.objects.all()', all)
 
-        entity = Entity()
+    # entity = Entity()
 
-        # print('1.Before')
-        # for i in countries:     # 일단 default 상태 확인
-        #     print(i, entity.__getattribute__(i))
+    # print('1.Before')
+    # for i in countries:     # 일단 default 상태 확인
+    #     print(i, entity.__getattribute__(i))
 
-        # for i in post:
-        #     try:
-        #         entity.__setattr__(i,True)
-        #     except:
-        #         pass
+    # for i in post:
+    #     try:
+    #         entity.__setattr__(i,True)
+    #     except:
+    #         pass
 
-        # print('2.After')
-        # for i in countries:     # 일단 default 상태 확인
-        #     print(i, entity.__getattribute__(i))
+    # print('2.After')
+    # for i in countries:     # 일단 default 상태 확인
+    #     print(i, entity.__getattribute__(i))
 
-        # entity.save()
+    # entity.save()
 
-        print('괜히 지랄 ㅎㅎ')
+    # print('괜히 지랄 ㅎㅎ')
 
-        return redirect('/')
-
-    else:
-        all = Entity.objects.all()
-        return render(request, 'main/body.html', context={'all':all, 'countries':countries})
+    # return redirect('/')
+        
 
 
 
@@ -87,7 +94,7 @@ def result(request):
         #         pass
 
         for country in array:
-            for obj in dataJson:
+            for obj in data_json:
                 if country == obj['name']:  # 있으면
                     area += obj['area']     # 선택 면적 합계
                     continents[obj['continent']] += 1   # 대륙별 집계
@@ -97,20 +104,21 @@ def result(request):
 
 
         # 비율 계산하는 함수
-        continentsRatio = []
-        continentsTotal = sum(continents.values())
-        for (value) in continents.values():
-            ratio = round(value/continentsTotal * 100, 2)
-            continentsRatio.append(ratio)
+        continentsCount = []
+        # continentsTotal = sum(continents.values())
+        # print(continentsTotal)
+        for value in continents.values():
+            # ratio = round(value/continentsTotal * 100, 2)
+            continentsCount.append(value)
 
-        # print(continentsRatio)
+        # print(continentsCount)
 
 
         number = len(array)
         # print(number)
-        ratio1 = round(number / 177 * 100, 2)   # %로 소수점 2자리까지 출력
+        ratio1 = round(number / CountriesNumber * 100, 2)   # %로 소수점 2자리까지 출력
         ratio2 = round(area / 149390550.0 * 100, 2)
 
         all = Entity.objects.all()
 
-        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'area':area, 'ratio1':ratio1, 'ratio2':ratio2, 'continentsRatio':continentsRatio})
+        return render(request, 'main/result.html', context={'array':array, 'array2':array2, 'all':all, 'number':number, 'area':area, 'ratio1':ratio1, 'ratio2':ratio2, 'continentsCount':continentsCount})

@@ -37,11 +37,12 @@ d3.json('./static/main/js/countries-110m.json')
             })
 
             .on('mousemove', ({pageX, pageY, target}) => {
+                let obj = filterIt(target.__data__.properties.name)[0]
                 tooltipSelection
                     .style('top', `${pageY + 20}px`)
                     .style('left', `${pageX - 10}px`)
                     .style('z-index', 100)
-                    .text(target.__data__.properties.name)  //__data__는... 대충 target을 만든 data를 출력해줌?;;
+                    .html(`<img src="${obj.url}" alt=${obj.name}> ${obj.nameKr} (${obj.name})`)  //__data__는... 대충 target을 만든 data를 출력해줌?;;
             })
 
             .on('mouseleave', ({target}) => {
@@ -56,15 +57,15 @@ d3.json('./static/main/js/countries-110m.json')
 
 
 // <이모지 로딩 위한 빌드업>
-let flagsJson = {}
+let dataJson = {}
 
-fetch("./static/main/js/flags.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
+fetch("./static/main/js/data.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
   .then(response => response.json())
-  .then(json => {flagsJson = json})
+  .then(json => {dataJson = json})
 
 
 function filterIt(searchValue) {      // searchValue 를 갖는 object 리턴하는 함수
-    return flagsJson.filter(function(obj) {
+    return dataJson.filter(function(obj) {
         return Object.keys(obj).some(function(key) {
         return obj[key] == searchValue;
         })
@@ -116,8 +117,9 @@ function addCountry (event,name,code) {
     //리스트에 추가
     const li = document.createElement('li');
     li.classList = code;
-    flag_url = filterIt(name)[0].file_url
-    li.innerHTML = `<img src="${flag_url}" alt=${name}> ${name}`
+    url = filterIt(name)[0].url
+    nameKr = filterIt(name)[0].nameKr
+    li.innerHTML = `<img src="${url}" alt=${name}> ${nameKr}`
     ol.appendChild(li);
 
     array2.push(li.innerHTML);
@@ -142,7 +144,14 @@ function removeCountry (name,code) {
     const li = document.querySelector(`li.${code}`)
     ol.removeChild(li);
 
-    let idx2 = array2.indexOf(li);
+    let innerHTML = li.innerHTML
+    
+    if (innerHTML.includes('/span')) {
+        console.log(true);
+        innerHTML = innerHTML.slice(0,-17);
+    }   // 휴지통으로 삭제 시 list의 span 땜에 에러나는거 방지용!
+
+    let idx2 = array2.indexOf(innerHTML);
     if (idx2 > -1) array2.splice(idx2,1);
 }
 
