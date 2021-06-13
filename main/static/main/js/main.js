@@ -17,7 +17,7 @@ svg.call(d3.zoom().on('zoom', (event) => {
 }))
 
 
-d3.json('./static/main/js/countries-110m.json')
+d3.json('./static/main/js/countries-50m.json')
     .then(data => {
         const countries = topojson.feature(data, data.objects.countries);
 
@@ -37,7 +37,9 @@ d3.json('./static/main/js/countries-110m.json')
             })
 
             .on('mousemove', ({pageX, pageY, target}) => {
+                console.log(target.__data__.properties.name);
                 let obj = filterIt(target.__data__.properties.name)[0]
+                // console.log(obj);
                 tooltipSelection
                     .style('top', `${pageY + 20}px`)
                     .style('left', `${pageX - 10}px`)
