@@ -1,9 +1,9 @@
 //<number>
 
-let number = document.getElementById('number')
-number = Number(number.value)
-console.log(number)
-const numberData = [number, 177 - number]
+let visitedNumber = document.getElementById('visitedNumber')
+visitedNumber = Number(visitedNumber.value)
+console.log(visitedNumber)
+const numberData = [visitedNumber, 177 - visitedNumber]
 console.log(numberData)
 
 var numberChart = new Chart(
@@ -61,11 +61,11 @@ var numberChart = new Chart(
 
 
 
-//<area>
-let area = document.getElementById('area')
-area = Number(area.value)
-console.log(area)
-const areaData = [area, 149390550.0 - area]
+//<visitedArea>
+let visitedArea = document.getElementById('visitedArea')
+visitedArea = Number(visitedArea.value)
+console.log(visitedArea)
+const areaData = [visitedArea, 149390550.0 - visitedArea]
 console.log(areaData)
 
 

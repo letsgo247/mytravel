@@ -48,14 +48,17 @@
         <br>
         총 국가 수: {{all}}
 
-        <!-- {% for entity in all %}
+        {% for entity in all %}
             <br>
             [{{entity.id}}]
-            kor: {{ entity.kor }},
+            KOR: {{ entity.KOR}},
+            CHN: {{ entity.CHN}}
+
+            <!-- kor: {{ entity.kor }},
             usa: {{ entity.usa }},
             jpn: {{ entity.jpn }},
-            hkg: {{ entity.hkg }}
-        {% endfor %} -->
+            hkg: {{ entity.hkg }} -->
+        {% endfor %}
     </footer>
 </body>
 
