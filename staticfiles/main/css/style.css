@@ -81,6 +81,7 @@ svg {
 .country {
     fill: ivory;
     stroke: black;
+    stroke-width: 1px;
 }
 
 

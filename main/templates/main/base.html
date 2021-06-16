@@ -44,21 +44,19 @@
     <footer>
         <strong><참가자 수 및 통계></strong>
         <br>
-        참가자 수: {{all.count}}
+        참가자 수: {{all.count}} 명
         <br>
-        총 국가 수: {{all}}
-
-        {% for entity in all %}
+        평균 여행 국가 수: {{averageCount}} 개국
+        <br>
+        순위: {{sortedRatioDict}}
+        <input class='input' type="hidden" id='sortedRatioDict' value='{{ sortedRatioDict }}'>
+        <canvas id="rankChart"></canvas>
+        <!-- {% for entity in all %}
             <br>
             [{{entity.id}}]
-            KOR: {{ entity.KOR}},
+            JPN: {{ entity.JPN}},
             CHN: {{ entity.CHN}}
-
-            <!-- kor: {{ entity.kor }},
-            usa: {{ entity.usa }},
-            jpn: {{ entity.jpn }},
-            hkg: {{ entity.hkg }} -->
-        {% endfor %}
+        {% endfor %} -->
     </footer>
 </body>
 

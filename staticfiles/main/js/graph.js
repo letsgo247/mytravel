@@ -1,10 +1,10 @@
 //<number>
 
-let number = document.getElementById('number')
-number = Number(number.value)
-console.log(number)
-const numberData = [number, 177 - number]
-console.log(numberData)
+let visitedNumber = document.getElementById('visitedNumber')
+visitedNumber = Number(visitedNumber.value)
+// console.log(visitedNumber)
+const numberData = [visitedNumber, 177 - visitedNumber]
+// console.log(numberData)
 
 var numberChart = new Chart(
     document.getElementById('numberChart'),
@@ -61,12 +61,12 @@ var numberChart = new Chart(
 
 
 
-//<area>
-let area = document.getElementById('area')
-area = Number(area.value)
-console.log(area)
-const areaData = [area, 149390550.0 - area]
-console.log(areaData)
+//<visitedArea>
+let visitedArea = document.getElementById('visitedArea')
+visitedArea = Number(visitedArea.value)
+// console.log(visitedArea)
+const areaData = [visitedArea, 149390550.0 - visitedArea]
+// console.log(areaData)
 
 
 
@@ -131,12 +131,12 @@ var areaChart = new Chart(
 
 
 //<continent>
-const continentsRatio = document.getElementById('continentsRatio')
-// console.log(continentsRatio.value)
-continentsRatioData = continentsRatio.value.slice(1, -1).split(',')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
-console.log(continentsRatioData)
-continentsRatioData = continentsRatioData.map(data => Number(data))
-console.log(continentsRatioData)
+const continentsCount = document.getElementById('continentsCount')
+// console.log(continentsCount.value)
+continentsCountData = continentsCount.value.slice(1, -1).split(',')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
+// console.log(continentsCountData)
+continentsCountData = continentsCountData.map(data => Number(data))
+// console.log(continentsCountData)
 
 
 
@@ -160,7 +160,7 @@ var ContinentsChart = new Chart(
             datasets: [{
                 backgroundColor: ['#ffbe22', '#60aaf3', '#948dec', '#e53949', '#91bf39', '#fe7c02', '#4836f3'],
                 borderColor: 'white',
-                data: continentsRatioData
+                data: continentsCountData
             }]
         },
 
@@ -186,7 +186,7 @@ var ContinentsChart = new Chart(
                             // console.log(item);
                             let label = item.label;
                             let value = item.parsed;
-                            return label + ': ' + value + '%';
+                            return label + ': ' + value + ' 개국';
                         }
                     }
                 },

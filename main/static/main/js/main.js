@@ -17,7 +17,7 @@ svg.call(d3.zoom().on('zoom', (event) => {
 }))
 
 
-d3.json('./static/main/js/countries-50m.json')
+d3.json('./static/main/js/countries-110m.json') // or 50m
     .then(data => {
         const countries = topojson.feature(data, data.objects.countries);
 
@@ -37,7 +37,8 @@ d3.json('./static/main/js/countries-50m.json')
             })
 
             .on('mousemove', ({pageX, pageY, target}) => {
-                console.log(target.__data__.properties.name);
+                // console.log(target.__data__.properties.name);
+                // console.log(filterIt(target.__data__.properties.name))
                 let obj = filterIt(target.__data__.properties.name)[0]
                 // console.log(obj);
                 tooltipSelection
@@ -59,17 +60,16 @@ d3.json('./static/main/js/countries-50m.json')
 
 
 // <이모지 로딩 위한 빌드업>
-let dataJson = {}
+let data_json = {}
 
 fetch("./static/main/js/data.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
   .then(response => response.json())
-  .then(json => {dataJson = json})
+  .then(json => {data_json = json})
 
-
-function filterIt(searchValue) {      // searchValue 를 갖는 object 리턴하는 함수
-    return dataJson.filter(function(obj) {
-        return Object.keys(obj).some(function(key) {
-        return obj[key] == searchValue;
+function filterIt(searchValue) {      // searchValue 를 name으로 갖는 object 리턴하는 함수
+    return data_json.filter(function(obj) {
+        return Object.keys(obj).some(function() {
+        return obj['name'] == searchValue;
         })
     });
 }
@@ -85,8 +85,8 @@ const gLayer = document.querySelector('g')
 const ol = document.querySelector('ol')
 // console.log(gLayer);
 // console.log(ol);
-const array = [];
-const array2 = [];
+const countriesArray = [];
+const liArray = [];
 
 function gLayer_listener () {
     gLayer.addEventListener('click', event=>{
@@ -95,7 +95,7 @@ function gLayer_listener () {
     let name = data.properties.name;
     let code = name.replaceAll(" ","").replaceAll('.','')   //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
     
-    if (array.includes(name)) { 
+    if (countriesArray.includes(name)) { 
         //기존에 있으면
         removeCountry(name,code)
 
@@ -114,7 +114,7 @@ function addCountry (event,name,code) {
     // event.target.setAttribute('style', 'fill:orange')
 
     //어레이에 추가
-    array.push(name);
+    countriesArray.push(name);
 
     //리스트에 추가
     const li = document.createElement('li');
@@ -124,7 +124,7 @@ function addCountry (event,name,code) {
     li.innerHTML = `<img src="${url}" alt=${name}> ${nameKr}`
     ol.appendChild(li);
 
-    array2.push(li.innerHTML);
+    liArray.push(li.innerHTML);
 
     //추가된 리스트에 휴지통 method 추가
     hover_listener(li,name,code);
@@ -139,8 +139,8 @@ function removeCountry (name,code) {
     target.classList.remove('selected')
 
     //어레이에서 삭제
-    let idx = array.indexOf(name);
-    if (idx > -1) array.splice(idx, 1);
+    let idx = countriesArray.indexOf(name);
+    if (idx > -1) countriesArray.splice(idx, 1);
     
     //리스트에서 삭제
     const li = document.querySelector(`li.${code}`)
@@ -153,8 +153,8 @@ function removeCountry (name,code) {
         innerHTML = innerHTML.slice(0,-17);
     }   // 휴지통으로 삭제 시 list의 span 땜에 에러나는거 방지용!
 
-    let idx2 = array2.indexOf(innerHTML);
-    if (idx2 > -1) array2.splice(idx2,1);
+    let idx2 = liArray.indexOf(innerHTML);
+    if (idx2 > -1) liArray.splice(idx2,1);
 }
 
 
@@ -164,10 +164,10 @@ function removeCountry (name,code) {
 // <수동 post 파트>
 function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
     $('.submit').on('mouseover', () => {
-        $('.input')[0].value = array
+        $('.input')[0].value = countriesArray
         console.log($('.input')[0].value)
 
-        $('.input2')[0].value = array2
+        $('.input2')[0].value = liArray
         console.log($('.input2')[0].value)
 
 

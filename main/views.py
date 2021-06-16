@@ -24,9 +24,45 @@ countriesNumber = len(all_fields)   # db에 등록된 국가 수 count
 
 
 
+
+# DB 출력 및 필요값 계산
+all = Entity.objects.all()
+participants = all.count()
+print('all=', all)
+
+countriesDict = {}
+
+for k in data_json:
+    alpha3 = k['alpha3']
+
+    rows = Entity.objects.filter(**{alpha3: True})  # https://stackoverflow.com/questions/4720079/django-query-filter-with-variable-column
+    count = rows.count()
+    countriesDict[alpha3] = count
+
+print(countriesDict)
+totalCount = sum(countriesDict.values())
+print(totalCount)
+averageCount = round(totalCount / participants, 2)
+print(averageCount)
+
+ratioDict = countriesDict.copy()
+
+for i,j in countriesDict.items():
+    # print(i,j)
+    ratioDict[i] = round(j/totalCount,4)
+    
+sortedRatioDict = sorted(ratioDict.items(), reverse=True, key=lambda x:x[1])[0:10]
+print(sortedRatioDict)
+
+
+
+
+
+
+
 def index(request):
     all = Entity.objects.all()
-    return render(request, 'main/body.html', context={'all':all})
+    return render(request, 'main/body.html', context={'all':all, 'averageCount':averageCount, 'sortedRatioDict': sortedRatioDict})
         
         
         
@@ -76,56 +112,32 @@ def result(request):
         print('countriesArray:',countriesArray)
         print('liArray:',liArray)
 
-
-        all = Entity.objects.all()
-        print('all=', all)
-
         entity = Entity()
-        print(entity)
+        # print(entity)
 
-        for country in countriesArray:
-            print(country)
+        for country in countriesArray:  # entity 만들기
+            # print(country)
             
             for k in data_json:
+                alpha3 = k['alpha3']
+                
                 if k['name'] == country:
-                    print('일치!')
-                    alpha3 = k['alpha3']
+                    # print('일치!')
                     
-                    print('1.Before')
-                    print(alpha3, entity.__getattribute__(alpha3))
+                    # print('1.Before')
+                    # print(alpha3, entity.__getattribute__(alpha3))
                     entity.__setattr__(alpha3, True)
-                    print('2.After')
-                    print(alpha3, entity.__getattribute__(alpha3))
+                    # print('2.After')
+                    # print(alpha3, entity.__getattribute__(alpha3))
 
-        print(entity)
-
-
-        # print('1.Before')
-        # for i in countriesArray:     # 일단 default 상태 확인
-        #     print(i, entity.__getattribute__(i))
-
-        # for i in post:
-        #     try:
-        #         entity.__setattr__(i,True)
-        #     except:
-        #         pass
-
-        # print('2.After')
-        # for i in countriesArray:     # 일단 default 상태 확인
-        #     print(i, entity.__getattribute__(i))
-
-        # entity.save()
-
+        # print(entity)
+        
 
 
         continents = {'Asia':0, 'Europe':0, 'Oceania':0, 'North America':0, 'South America':0, 'Africa':0, 'Antarctica':0}
         continentsCount = []
         # continentsTotal = sum(continents.values())
         # print(continentsTotal)
-        for value in continents.values():
-            # ratio = round(value/continentsTotal * 100, 2)
-            continentsCount.append(value)
-
 
         visitedArea = 0
         
@@ -134,6 +146,17 @@ def result(request):
                 if country == obj['name']:  # 있으면
                     visitedArea += obj['area']     # 선택 면적 합계
                     continents[obj['continent']] += 1   # 대륙별 집계
+
+        # print(continents)
+
+        
+        for value in continents.values():
+            # print(value)
+            # ratio = round(value/continentsTotal * 100, 2)
+            continentsCount.append(value)
+
+        # print(continentsCount)
+
 
         visitedNumber = len(countriesArray)
         numberRatio = round(visitedNumber / countriesNumber * 100, 2)   # %로 소수점 2자리까지 출력
