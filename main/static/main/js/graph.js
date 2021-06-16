@@ -1,45 +1,30 @@
-//<rankChart>
-
 let data_json2 = {}
 
 fetch("./static/main/js/data.json")
   .then(response => response.json())
   .then(json => {data_json2 = json})
   .then(() => {
+    //<rankChart>
     const sortedRatioDict = document.getElementById('sortedRatioDict')
-    console.log(sortedRatioDict.value)
+    // console.log(sortedRatioDict.value)
     sortedRatioDictData = sortedRatioDict.value.slice(2, -2).split('), (')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
     console.log(sortedRatioDictData)
     
-    // console.log('허이짜')
     rankLabels = sortedRatioDictData.map(data => {
         alpha3 = data.slice(1,4)
-        // console.log(alpha3)
-        // console.log(data_json2)
         let obj = jsonSearch('alpha3',alpha3)[0]
         let labelKr = obj.nameKr
         return labelKr
     })
-    console.log(rankLabels)
+    // console.log(rankLabels)
     
-    // console.log('허이짜')
     
     rankData = sortedRatioDictData.map(data => Number(data.slice(7,13)))
-    console.log(rankData)
-
-
-
-
-
-
-
-
+    // console.log(rankData)
 
 
     function jsonSearch(searchKey,searchValue) {      // searchValue 를 name으로 갖는 object 리턴하는 함수
         return data_json2.filter(function(obj) {
-            // console.log(data_json2)
-            // console.log('허이짜')
             return Object.keys(obj).some(function() {
             return obj[searchKey] == searchValue;
             })
@@ -48,17 +33,10 @@ fetch("./static/main/js/data.json")
 
 
 
-
-
-    
-
-
-
-
     var rankChart = new Chart(
         document.getElementById('rankChart'),
         {
-            type: 'pie',
+            type: 'bar',
 
             data: {
                 labels: rankLabels,
@@ -71,41 +49,37 @@ fetch("./static/main/js/data.json")
             },
 
             options: {
+                indexAxis: 'y',
+                scales:{
+                    x: {
+                        title: {
+                            display: true,
+                            text: '%',
+                            align: 'center'
+                        }
+                    }
+                },
                 plugins: {
                     title: {
                         display: true,
-                        text: '대륙별 비율',
+                        text: '여행 많이 간 순위',
                         font: {
                             size: 15
                         }
                     },
                     legend: {
-                        display: true,
-                        // font: {
-                        //     size: 150
-                        // }
+                        display: false,
                     },
-                    tooltip: {
-                        enabled: true,
-                        callbacks: {
-                            label: function (item) {
-                                // console.log(item);
-                                let label = item.label;
-                                let value = item.parsed;
-                                return label + ': ' + value + ' 개국';
-                            }
-                        }
-                    },
+                    
                     labels: {
-                        render: 'percent',
-                        precision: 1
+                        render: 'none',
+                        display: false
                     }
-
+                    
                 }
             }
         }
     );
-
 
 
 

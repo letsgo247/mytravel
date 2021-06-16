@@ -49,7 +49,7 @@ ratioDict = countriesDict.copy()
 
 for i,j in countriesDict.items():
     # print(i,j)
-    ratioDict[i] = round(j/totalCount,4)
+    ratioDict[i] = round(j/totalCount*100,2)
     
 sortedRatioDict = sorted(ratioDict.items(), reverse=True, key=lambda x:x[1])[0:10]
 print(sortedRatioDict)
@@ -164,4 +164,4 @@ def result(request):
 
         # all = Entity.objects.all()
 
-        return render(request, 'main/result.html', context={'liArray':liArray, 'all':all, 'visitedNumber':visitedNumber, 'visitedArea':visitedArea, 'numberRatio':numberRatio, 'areaRatio':areaRatio, 'continentsCount':continentsCount})
+        return render(request, 'main/result.html', context={'liArray':liArray, 'all':all, 'averageCount':averageCount, 'sortedRatioDict': sortedRatioDict, 'visitedNumber':visitedNumber, 'visitedArea':visitedArea, 'numberRatio':numberRatio, 'areaRatio':areaRatio, 'continentsCount':continentsCount})
