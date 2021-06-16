@@ -60,6 +60,9 @@ fetch("./static/main/js/data.json")
                     }
                 },
                 plugins: {
+                    datalabels: {
+                        display: false
+                    },
                     title: {
                         display: true,
                         text: '여행 많이 간 순위',
@@ -72,8 +75,10 @@ fetch("./static/main/js/data.json")
                     },
                     
                     labels: {
-                        render: 'none',
-                        display: false
+                        // render: 'value',
+                        render: function(args){
+                            return args.value + '%';
+                        },
                     }
                     
                 }
