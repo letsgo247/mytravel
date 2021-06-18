@@ -28,7 +28,7 @@ countriesNumber = len(all_fields)   # db에 등록된 국가 수 count
 # DB 출력 및 필요값 계산
 all = Entity.objects.all()
 participants = all.count()
-print('all=', all)
+# print('all=', all)
 
 countriesDict = {}
 
@@ -39,11 +39,11 @@ for k in data_json:
     count = rows.count()
     countriesDict[alpha3] = count
 
-print(countriesDict)
+# print(countriesDict)
 totalCount = sum(countriesDict.values())
-print(totalCount)
+# print(totalCount)
 averageCount = round(totalCount / participants, 2)
-print(averageCount)
+# print(averageCount)
 
 ratioDict = countriesDict.copy()
 
@@ -52,7 +52,7 @@ for i,j in countriesDict.items():
     ratioDict[i] = round(j/totalCount*100,2)
     
 sortedRatioDict = sorted(ratioDict.items(), reverse=True, key=lambda x:x[1])[0:10]
-print(sortedRatioDict)
+# print(sortedRatioDict)
 
 
 
@@ -109,8 +109,8 @@ def result(request):
         countriesArray = countriesArray.split(",")    # string to array
         liArray = liArray.split(",")    # string to array
 
-        print('countriesArray:',countriesArray)
-        print('liArray:',liArray)
+        # print('countriesArray:',countriesArray)
+        # print('liArray:',liArray)
 
         entity = Entity()
         # print(entity)

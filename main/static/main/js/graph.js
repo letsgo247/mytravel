@@ -8,7 +8,7 @@ fetch("./static/main/js/data.json")
     const sortedRatioDict = document.getElementById('sortedRatioDict')
     // console.log(sortedRatioDict.value)
     sortedRatioDictData = sortedRatioDict.value.slice(2, -2).split('), (')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
-    console.log(sortedRatioDictData)
+    // console.log(sortedRatioDictData)
     
     rankLabels = sortedRatioDictData.map(data => {
         alpha3 = data.slice(1,4)

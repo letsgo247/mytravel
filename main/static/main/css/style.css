@@ -114,3 +114,11 @@ span {
 img {
     width:1rem;
 }
+
+canvas {
+    width: 100%;
+}
+
+#rankChart {
+    min-width: 600px;
+}

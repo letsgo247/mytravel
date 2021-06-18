@@ -48,16 +48,10 @@
         참가자 수: {{all.count}} 명
         <br>
         평균 여행 국가 수: {{averageCount}} 개국
-        <br>
-        순위: {{sortedRatioDict}}
+        <br><br>
+        <!-- 순위: {{sortedRatioDict}} -->
         <input class='input' type="hidden" id='sortedRatioDict' value='{{ sortedRatioDict }}'>
         <canvas id="rankChart"></canvas>
-        <!-- {% for entity in all %}
-            <br>
-            [{{entity.id}}]
-            JPN: {{ entity.JPN}},
-            CHN: {{ entity.CHN}}
-        {% endfor %} -->
     </footer>
 </body>
 
