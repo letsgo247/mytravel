@@ -199,21 +199,12 @@ function hover_listener (li,name,code) {
 
 
 
-function pngGenerator () {
-    let svg = document.querySelector('svg');
-    let img = document.querySelector('#result');
-    svg.toDataURL("image/png", {
-        callback: data => img.setAttribute('src', data)
-    })
-}
-
 
 
 
 function init() {
     gLayer_listener()
     submit_listener()
-    pngGenerator()
 }
 
 init();
