@@ -198,13 +198,35 @@ function hover_listener (li,name,code) {
 
 
 
+Kakao.init('84d8fd6fde6bfa9abdb90d8b5557c9d6');
+console.log(Kakao)
+
+
+function kakaoInit() {
+    console.log('실행?')
+    Kakao.Link.sendDefault({
+        // container: ".kakao-link", // 공유하기 기능을 부여할 DOM container
+        objectType: "feed", // 피드타입
+        content: {
+          title: "여최몇?",
+          description:
+            "그 동안 여행했던 나라를 모두 선택해주세요! 재미있는 통계 결과를 알려드립니다.",
+          imageUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_Map_Blank.svg/2753px-World_Map_Blank.svg.png",
+          link: {
+            webUrl: "http://127.0.0.1:8000", // 카카오 PC에서 확인할 때 연결될 웹 url
+            mobileWebUrl: "http://127.0.0.1:8000", // 카카오 앱에서 확인할 때 연결될 웹 url
+          },
+        },
+      });
+}
 
 
 
 
 function init() {
-    gLayer_listener()
-    submit_listener()
+    gLayer_listener();
+    submit_listener();
 }
 
 init();
