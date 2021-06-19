@@ -17,16 +17,33 @@ svg.call(d3.zoom().on('zoom', (event) => {
 }))
 
 
-d3.json('./static/main/js/countries-110m.json') // or 50m
+
+function nameToCode (name) {    //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
+    return name.replaceAll(" ","").replaceAll('.','')
+}
+
+
+
+function drawMap () {
+    d3.json('./static/main/js/countries-110m.json') // or 50m
     .then(data => {
         const countries = topojson.feature(data, data.objects.countries);
+        // console.log(countries.features)
 
         g.selectAll('path').data(countries.features)
             .enter().append('path')
             .attr('class', 'country')
             .attr('d', d=>pathGenerator(d))
+            .attr('id', d=>nameToCode(d.properties.name))
 
-        tooltipSelection = d3.select('body')
+    })
+    .then(() => markMap())
+    .then(() => showTooltip())
+}
+
+
+function showTooltip() {
+    tooltipSelection = d3.select('body')
             .append('div')
             .attr('class', 'hover-info')
             .style('visibility', 'hidden');
@@ -51,10 +68,30 @@ d3.json('./static/main/js/countries-110m.json') // or 50m
             .on('mouseleave', ({target}) => {
                 tooltipSelection.style('visibility', 'hidden');
             })
+}
+
+
+function markMap() {
+    if (document.querySelector('#countriesArray')) {
+        // console.log('있네 있어')
+        selectedArrayString = document.querySelector('#countriesArray').value;
+        // console.log(selectedArrayString);
+        selectedArray = selectedArrayString.slice(1, -1).split(', ')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
+        // console.log(selectedArray)
+        selectedArray.forEach(d => {
+            // console.log(d)
+            code = nameToCode(d.slice(1, -1))
+            // console.log(code)
+            selected = document.querySelector(`#${code}`)
+            // console.log(selected)
+            selected.classList.add('selected');
         })
-
-
-
+    }
+    
+    else {
+        // console.log('index인가벼...')
+    }
+}
 
 
 
@@ -65,6 +102,11 @@ let data_json = {}
 fetch("./static/main/js/data.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
   .then(response => response.json())
   .then(json => {data_json = json})
+  .then(() => drawMap())
+
+
+// window.addEventListener('DOMContentLoaded', markMap())
+
 
 function filterIt(searchValue) {      // searchValue 를 name으로 갖는 object 리턴하는 함수
     return data_json.filter(function(obj) {
@@ -73,9 +115,6 @@ function filterIt(searchValue) {      // searchValue 를 name으로 갖는 objec
         })
     });
 }
-
-
-
 
 
 
@@ -93,7 +132,7 @@ function gLayer_listener () {
     let data = event.target.__data__;
 
     let name = data.properties.name;
-    let code = name.replaceAll(" ","").replaceAll('.','')   //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
+    code = nameToCode(name)   //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
     
     if (countriesArray.includes(name)) { 
         //기존에 있으면
@@ -110,7 +149,7 @@ function gLayer_listener () {
 function addCountry (event,name,code) {
     //일단 색깔 칠하고
     event.target.classList.add('selected');
-    event.target.id = code;
+    // event.target.id = code;  // 미리 모든 나라에 달아둠
     // event.target.setAttribute('style', 'fill:orange')
 
     //어레이에 추가
@@ -149,7 +188,7 @@ function removeCountry (name,code) {
     let innerHTML = li.innerHTML
     
     if (innerHTML.includes('/span')) {
-        console.log(true);
+        // console.log(true);
         innerHTML = innerHTML.slice(0,-17);
     }   // 휴지통으로 삭제 시 list의 span 땜에 에러나는거 방지용!
 
@@ -165,10 +204,10 @@ function removeCountry (name,code) {
 function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
     $('.submit').on('mouseover', () => {
         $('.input')[0].value = countriesArray
-        console.log($('.input')[0].value)
+        // console.log($('.input')[0].value)
 
         $('.input2')[0].value = liArray
-        console.log($('.input2')[0].value)
+        // console.log($('.input2')[0].value)
 
 
     })
@@ -199,7 +238,7 @@ function hover_listener (li,name,code) {
 
 
 Kakao.init('84d8fd6fde6bfa9abdb90d8b5557c9d6');
-console.log(Kakao)
+// console.log(Kakao)
 
 
 function kakaoInit() {
@@ -225,8 +264,11 @@ function kakaoInit() {
 
 
 function init() {
-    gLayer_listener();
-    submit_listener();
+    if (document.querySelector('#countriesArray')) {}   // result로 가서 countriesArray가 있으면 pass, 아니면 아래 listener 실행하기
+    else {
+        gLayer_listener();
+        submit_listener();
+    }
 }
 
 init();

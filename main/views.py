@@ -164,4 +164,4 @@ def result(request):
 
         # all = Entity.objects.all()
 
-        return render(request, 'main/result.html', context={'liArray':liArray, 'all':all, 'averageCount':averageCount, 'sortedRatioDict': sortedRatioDict, 'visitedNumber':visitedNumber, 'visitedArea':visitedArea, 'numberRatio':numberRatio, 'areaRatio':areaRatio, 'continentsCount':continentsCount})
+        return render(request, 'main/result.html', context={'liArray':liArray, 'countriesArray':countriesArray, 'all':all, 'averageCount':averageCount, 'sortedRatioDict': sortedRatioDict, 'visitedNumber':visitedNumber, 'visitedArea':visitedArea, 'numberRatio':numberRatio, 'areaRatio':areaRatio, 'continentsCount':continentsCount})
