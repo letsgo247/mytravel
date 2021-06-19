@@ -1,6 +1,6 @@
 let data_json2 = {}
 
-fetch("./static/main/js/data.json")
+fetch("/static/main/js/data.json")
   .then(response => response.json())
   .then(json => {data_json2 = json})
   .then(() => {

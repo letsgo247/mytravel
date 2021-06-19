@@ -25,7 +25,7 @@ function nameToCode (name) {    //빈칸이나 . 있으면 클래스로 못 찾�
 
 
 function drawMap () {
-    d3.json('./static/main/js/countries-110m.json') // or 50m
+    d3.json('/static/main/js/countries-110m.json') // or 50m
     .then(data => {
         const countries = topojson.feature(data, data.objects.countries);
         // console.log(countries.features)
@@ -99,7 +99,7 @@ function markMap() {
 // <이모지 로딩 위한 빌드업>
 let data_json = {}
 
-fetch("./static/main/js/data.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
+fetch("/static/main/js/data.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
   .then(response => response.json())
   .then(json => {data_json = json})
   .then(() => drawMap())

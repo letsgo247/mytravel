@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Entity(models.Model):
+    identifier = models.CharField(max_length=10, default=None, null=True)
     FJI = models.BooleanField(default=False)
     TZA = models.BooleanField(default=False)
     ESH = models.BooleanField(default=False)
