@@ -71,7 +71,7 @@ def base_contexts():
         count = rows.count()
         countriesDict[alpha3] = count
 
-    # print(countriesDict)
+    print(countriesDict)
     totalCount = sum(countriesDict.values())
     # print(totalCount)
     averageCount = round(totalCount / participants, 2)

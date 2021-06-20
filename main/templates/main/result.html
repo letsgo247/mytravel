@@ -2,8 +2,6 @@
 
 {% block content %}
 
-<div style="margin:1rem">통계 결과!</div>
-
 <section>
     <main>
         <svg></svg>
@@ -23,28 +21,60 @@
 </section>
 
 <div>
-    <a href='javascript:kakaoInit();' class='kakao-link'>까똑 링끄</a>
+    <hr>
+    <h2><통계 결과></h2>
+    <br>
+    당신은 현재까지 <strong>{{ visitedNumber }} 개국</strong>을 여행하였습니다!<br>
+    참가자 중 <strong>상위 {{ visitedNumber }}%</strong> 입니다.
+    <br><br><br>
+    <div class="chart-container"><canvas id="numberChart"></canvas></div>
+    <br>당신은 전세계의 <strong>{{ numberRatio }}%</strong>를 여행하였습니다! (국가 수 기준)<br>
+    <br><br><br>
+    <div class="chart-container"><canvas id="areaChart"></canvas></div>
+    <br>당신은 전세계의 <strong>{{ areaRatio }}%</strong>를 여행하였습니다! (면적 기준)<br>
+    <br><br><br>
+    <div class="chart-container"><canvas id="continentsChart"></canvas></div>
+    <!-- 대륙별: {{ continentsCountArray }}<br> -->
 </div>
 
 
 <div>
-    <canvas id="numberChart"></canvas>
-    <canvas id="areaChart"></canvas>
-    <canvas id="continentsChart"></canvas>
-</div>
-
-
-<div>
-    여행한 국가 수: {{ visitedNumber }}<br>
-    여행한 국가 비율(국가 수 기준): {{ numberRatio }}%<br>
-    여행한 국가 비율(면적 기준): {{ areaRatio }}%<br>
-    대륙별: {{ continentsCountArray }}<br>
-    <!-- 아시아: {{continents.Asia}} -->
     <input class='input' type="hidden" id='visitedNumber' value='{{ visitedNumber }}'>
     <input class='input' type="hidden" id='visitedArea' value='{{ visitedArea }}'>
     <input class='input' type="hidden" id='continentsCountArray' value='{{ continentsCountArray }}'>
     <input class='input' type="hidden" id='countriesArray' value='{{ countriesArray }}'>
-    
+</div>
+
+
+<div class='share-container'>
+    <br><br><br>
+    <a href='javascript:kakaoInit();' class='kakao-link'>
+        <img src="/static/main/img/kakao.svg" alt="">
+        카카오톡으로 결과 공유하기
+    </a>
+    &nbsp;&nbsp;
+    <a href='javascript:kakaoInit();' class='kakao-link'>
+        <img src="/static/main/img/share.svg" alt="">
+        결과 페이지 링크 복사하기
+    </a>
+</div>
+
+
+<div>
+    <br><hr><br>
+    <h2>
+        <여최몇 참가자 통계>
+    </h2>
+    <br>
+    참가자 수: <strong>{{all.count}} 명</strong>
+    <br><br>
+    평균 여행 국가 수: <strong>{{averageCount}} 개국</strong>
+    <br><br><br>
+    <!-- 순위: {{sortedRatioDict}} -->
+    <input class='input' type="hidden" id='sortedRatioDict' value='{{ sortedRatioDict }}'>
+    <div class="rankChart-container">
+        <canvas id="rankChart"></canvas>
+    </div>
 </div>
 
 {% endblock %}

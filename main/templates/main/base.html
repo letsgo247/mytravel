@@ -10,20 +10,23 @@
     <title>여최몇?</title>
 
     <!--  BOOTSTRAP  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/country-flag-emoji@latest/dist/country-flag-emoji.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script> 
+    <script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
     <script src="{% static 'main/js/main.js' %}" defer></script>
@@ -33,25 +36,22 @@
 
 <body>
     <header>
-        <a href="/"><h1>여최몇?</h1></a>
+        <a href="/">
+            <h1>여최몇?</h1>
+        </a>
     </header>
+
+    <div style="margin:1rem">그 동안 여행했던 나라를 모두 선택해주세요!<br>
+        재미있는 통계 결과를 알려드립니다.</div>
 
     {% block content %}
 
     {% endblock %}
 
-    <hr style="width:90vw">
-    
     <footer>
-        <strong><참가자 수 및 통계></strong>
+        ⓒ 2021 by <a href="http://letsgo247.net/contact.html" target="_blank">KARAMEL STUDIO</a>. All Rights Reserved
         <br>
-        참가자 수: {{all.count}} 명
-        <br>
-        평균 여행 국가 수: {{averageCount}} 개국
-        <br><br>
-        <!-- 순위: {{sortedRatioDict}} -->
-        <input class='input' type="hidden" id='sortedRatioDict' value='{{ sortedRatioDict }}'>
-        <canvas id="rankChart"></canvas>
+        Powered by <a href="https://www.djangoproject.com/">Django</a>
     </footer>
 </body>
 
