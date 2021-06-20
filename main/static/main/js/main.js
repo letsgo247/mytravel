@@ -3,8 +3,8 @@
 const svg = d3.select('svg');
 
 const projection = d3.geoMercator()
-                        .center([-30, 30])
-                        .scale(300)
+                        .center([0, 40])
+                        .scale(200)
                         .rotate([-150,0]);
 // const projection = d3.geoNaturalEarth1();
 // const projection = d3.geoEqualEarth();
@@ -125,7 +125,7 @@ const ol = document.querySelector('ol')
 // console.log(gLayer);
 // console.log(ol);
 const countriesArray = [];
-const liArray = [];
+// const liArray = [];
 
 function gLayer_listener () {
     gLayer.addEventListener('click', event=>{
@@ -163,7 +163,7 @@ function addCountry (event,name,code) {
     li.innerHTML = `<img src="${url}" alt=${name}> ${nameKr}`
     ol.appendChild(li);
 
-    liArray.push(li.innerHTML);
+    // liArray.push(li.innerHTML);
 
     //추가된 리스트에 휴지통 method 추가
     hover_listener(li,name,code);
@@ -192,8 +192,8 @@ function removeCountry (name,code) {
         innerHTML = innerHTML.slice(0,-17);
     }   // 휴지통으로 삭제 시 list의 span 땜에 에러나는거 방지용!
 
-    let idx2 = liArray.indexOf(innerHTML);
-    if (idx2 > -1) liArray.splice(idx2,1);
+    // let idx2 = liArray.indexOf(innerHTML);
+    // if (idx2 > -1) liArray.splice(idx2,1);
 }
 
 
@@ -206,7 +206,7 @@ function submit_listener () {   // 선택된 array ajax 처리로 post 보내주
         $('.input')[0].value = countriesArray
         // console.log($('.input')[0].value)
 
-        $('.input2')[0].value = liArray
+        // $('.input2')[0].value = liArray
         // console.log($('.input2')[0].value)
 
 

@@ -110,10 +110,9 @@ def countriesArray_to_contexts(countriesArray):
     return visitedNumber, visitedArea, numberRatio, areaRatio, continentsCountArray
 
 # entity 생성 (w/o save)
-def make_entity(countriesArray):
+def make_entity(countriesArray, identifier):
     entity = Entity()
     
-    identifier = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(8))
     entity.identifier = identifier
     print(entity.identifier)
 
@@ -148,37 +147,15 @@ def index(request):
 
 def result(request):
     if request.method == 'POST' :
-        all, averageCount, sortedRatioDict = base_contexts()
-
         countriesArray = request.POST['countriesArray']
         countriesArray = countriesArray.split(",")    # string to array
-        # print('countriesArray:',countriesArray)
-        liArray = countriesArray_to_liArray(countriesArray)
-        # print('liArray:',liArray)
-        
 
-        entity = make_entity(countriesArray)
-        # entity.save()
+        identifier = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(8))
         
+        entity = make_entity(countriesArray, identifier)
+        entity.save()
         
-        visitedNumber, visitedArea, numberRatio, areaRatio, continentsCountArray = countriesArray_to_contexts(countriesArray)
-
-
-        return render(request, 'main/result.html', context={
-            # to result
-            'liArray':liArray, 
-            'countriesArray':countriesArray, 
-            'visitedNumber':visitedNumber, 
-            'visitedArea':visitedArea, 
-            'numberRatio':numberRatio, 
-            'areaRatio':areaRatio, 
-            'continentsCountArray':continentsCountArray,
-            
-            # to base
-            'all':all, 
-            'averageCount':averageCount, 
-            'sortedRatioDict': sortedRatioDict, 
-            })
+        return redirect(f"/result/{identifier}")
 
 
 

@@ -226,9 +226,9 @@ fetch("/static/main/js/data.json")
 
 
     //<continent>
-    const continentsCount = document.getElementById('continentsCount')
+    const continentsCountArray = document.getElementById('continentsCountArray')
     // console.log(continentsCount.value)
-    continentsCountData = continentsCount.value.slice(1, -1).split(',')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
+    continentsCountData = continentsCountArray.value.slice(1, -1).split(',')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
     // console.log(continentsCountData)
     continentsCountData = continentsCountData.map(data => Number(data))
     // console.log(continentsCountData)
