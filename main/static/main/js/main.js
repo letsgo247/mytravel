@@ -242,7 +242,9 @@ Kakao.init('84d8fd6fde6bfa9abdb90d8b5557c9d6');
 
 
 function kakaoInit() {
-    console.log('실행?')
+    // console.log('실행?')
+    console.log(window.location.href)   // 현재 열려있는 url
+
     Kakao.Link.sendDefault({
         // container: ".kakao-link", // 공유하기 기능을 부여할 DOM container
         objectType: "feed", // 피드타입
@@ -253,8 +255,8 @@ function kakaoInit() {
           imageUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_Map_Blank.svg/2753px-World_Map_Blank.svg.png",
           link: {
-            webUrl: "http://127.0.0.1:8000", // 카카오 PC에서 확인할 때 연결될 웹 url
-            mobileWebUrl: "http://127.0.0.1:8000", // 카카오 앱에서 확인할 때 연결될 웹 url
+            webUrl: `${window.location.href}`, // 카카오 PC에서 확인할 때 연결될 웹 url
+            mobileWebUrl: `${window.location.href}`, // 카카오 앱에서 확인할 때 연결될 웹 url
           },
         },
       });
