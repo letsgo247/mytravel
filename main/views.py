@@ -21,6 +21,7 @@ data_json = load_json("./main/static/main/js/data.json")
 # DB 접근
 all_fields = Entity._meta.fields  # Entity의 fields name list 생성
 countriesNumber = len(all_fields)   # db에 등록된 국가 수 count
+# print(all_fields)
 # Entity.objects.filter(id=5).delete()  # record 삭제
 
 
@@ -56,11 +57,41 @@ def countriesArray_to_liArray(countriesArray):
 
     return liArray
 
+def all_to_countArray(all):
+    countArray = []
+    for entity in all:
+        count = 0
+        for field in all_fields:
+            if entity.__getattribute__(field.name) == True:
+                count += 1
+        countArray.append(count)
+
+    countArray.sort(reverse=True)     
+    return countArray
+
+
+def count_rank(identifier,all):
+    countArray = all_to_countArray(all)
+    participants = all.count()
+
+    me = Entity.objects.get(identifier=identifier)
+    meCount = 0
+    for field in all_fields:
+        if me.__getattribute__(field.name) == True:
+                meCount += 1
+
+    index = countArray.index(meCount)
+
+    rank = round((index+1) / participants *100, 2)
+    return rank
+
+
+
+
 # DB 출력 및 base 필요값 계산
 def base_contexts():
     all = Entity.objects.all()
     participants = all.count()
-    # print('all=', all)
 
     countriesDict = {}
 
@@ -71,21 +102,18 @@ def base_contexts():
         count = rows.count()
         countriesDict[alpha3] = count
 
-    print(countriesDict)
+    # print(countriesDict)
     totalCount = sum(countriesDict.values())
-    # print(totalCount)
     averageCount = round(totalCount / participants, 2)
-    # print(averageCount)
 
     ratioDict = countriesDict.copy()
 
     for i,j in countriesDict.items():
-        # print(i,j)
         ratioDict[i] = round(j/totalCount*100,2)
         
     sortedRatioDict = sorted(ratioDict.items(), reverse=True, key=lambda x:x[1])[0:10]
-    # print(sortedRatioDict)
     return all, averageCount, sortedRatioDict
+
 
 # countriesArray 로부터 각종 contexts 생성
 def countriesArray_to_contexts(countriesArray):
@@ -132,13 +160,9 @@ def make_entity(countriesArray, identifier):
 
 
 def index(request):
-    all, averageCount, sortedRatioDict = base_contexts()
+    # all, averageCount, sortedRatioDict = base_contexts()
 
-    return render(request, 'main/body.html', context={
-        'all':all, 
-        'averageCount':averageCount, 
-        'sortedRatioDict': sortedRatioDict
-        })
+    return render(request, 'main/body.html')
 
 
 
@@ -170,6 +194,9 @@ def load_result(request, identifier):
 
     visitedNumber, visitedArea, numberRatio, areaRatio, continentsCountArray = countriesArray_to_contexts(countriesArray)
 
+    rank = count_rank(identifier, all)
+
+
     
 
     return render(request, 'main/result.html', context={
@@ -182,9 +209,10 @@ def load_result(request, identifier):
             'areaRatio':areaRatio, 
             'continentsCountArray':continentsCountArray,
             'identifier':identifier,
+            'rank': rank,
             
             # to base
             'all':all, 
             'averageCount':averageCount, 
-            'sortedRatioDict': sortedRatioDict, 
+            'sortedRatioDict': sortedRatioDict,
             })
