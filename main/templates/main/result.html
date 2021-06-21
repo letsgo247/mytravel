@@ -21,8 +21,11 @@
 </section>
 
 <div>
-    <hr>
-    <h2><통계 결과></h2>
+    <br>
+    <hr><br>
+    <h2>
+        <통계 결과>
+    </h2>
     <br>
     당신은 현재까지 <strong>{{ visitedNumber }} 개국</strong>을 여행하였습니다!<br>
     참가자 중 <strong>상위 {{ visitedNumber }}%</strong> 입니다.
@@ -48,20 +51,25 @@
 
 <div class='share-container'>
     <br><br><br>
+    <label for='share-link'>결과 페이지 링크:</label>
+    <input type="url" id='share-link' name='share-link' value='http://127.0.0.1:8000/result/{{ identifier }}' size="38">
+    <br><br>
+    <a href='javascript:copy_to_clipboard();' class='share-link'>
+        <img src="/static/main/img/share.svg" alt="">
+        결과 페이지 링크 복사하기
+    </a>
+    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+    <br><br>
     <a href='javascript:kakaoInit();' class='kakao-link'>
         <img src="/static/main/img/kakao.svg" alt="">
         카카오톡으로 결과 공유하기
-    </a>
-    &nbsp;&nbsp;
-    <a href='javascript:kakaoInit();' class='kakao-link'>
-        <img src="/static/main/img/share.svg" alt="">
-        결과 페이지 링크 복사하기
     </a>
 </div>
 
 
 <div>
-    <br><hr><br>
+    <br>
+    <hr><br>
     <h2>
         <여최몇 참가자 통계>
     </h2>

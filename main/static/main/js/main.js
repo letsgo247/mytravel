@@ -264,6 +264,22 @@ function kakaoInit() {
 
 
 
+function copy_to_clipboard() {
+    // let t = document.createElement('textarea');
+    // document.body.appendChild(t);
+    // let link = window.location.href;
+    // t.value = link
+    // console.log(link);
+    let t = document.querySelector('#share-link');
+    console.log(t)
+    t.select();
+    document.execCommand('copy');
+    alert('공유 링크가 클립보드로 복사되었습니다!');
+    // document.body.removeChild(t);
+}
+
+
+
 
 function init() {
     if (document.querySelector('#countriesArray')) {}   // result로 가서 countriesArray가 있으면 pass, 아니면 아래 listener 실행하기

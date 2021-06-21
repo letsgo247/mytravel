@@ -181,6 +181,7 @@ def load_result(request, identifier):
             'numberRatio':numberRatio, 
             'areaRatio':areaRatio, 
             'continentsCountArray':continentsCountArray,
+            'identifier':identifier,
             
             # to base
             'all':all, 
