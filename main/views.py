@@ -131,11 +131,18 @@ def countriesArray_to_contexts(countriesArray):
     for value in continentsCountDict.values():
             continentsCountArray.append(value)  # chart 용 array 생성
 
+    continentsLabel= ['아시아','유럽','오세아니아','북아메리카','남아메리카','아프리카','남극']
+    tmp = max(continentsCountArray)
+    index = continentsCountArray.index(tmp)
+    print(index)
+    maxContinent = continentsLabel[index]
+    
+
     visitedNumber = len(countriesArray)
     numberRatio = round(visitedNumber / countriesNumber * 100, 2)   # %로 소수점 2자리까지 출력
     areaRatio = round(visitedArea / 149390550.0 * 100, 2)
 
-    return visitedNumber, visitedArea, numberRatio, areaRatio, continentsCountArray
+    return visitedNumber, visitedArea, numberRatio, areaRatio, continentsCountArray, maxContinent
 
 # entity 생성 (w/o save)
 def make_entity(countriesArray, identifier):
@@ -160,9 +167,14 @@ def make_entity(countriesArray, identifier):
 
 
 def index(request):
-    # all, averageCount, sortedRatioDict = base_contexts()
+    all, averageCount, sortedRatioDict = base_contexts()
 
-    return render(request, 'main/body.html')
+    return render(request, 'main/body.html', context={
+            # to base
+            'all':all, 
+            'averageCount':averageCount, 
+            'sortedRatioDict': sortedRatioDict,
+            })
 
 
 
@@ -192,7 +204,7 @@ def load_result(request, identifier):
 
     liArray = countriesArray_to_liArray(countriesArray)
 
-    visitedNumber, visitedArea, numberRatio, areaRatio, continentsCountArray = countriesArray_to_contexts(countriesArray)
+    visitedNumber, visitedArea, numberRatio, areaRatio, continentsCountArray, maxContinent = countriesArray_to_contexts(countriesArray)
 
     rank = count_rank(identifier, all)
 
@@ -201,15 +213,16 @@ def load_result(request, identifier):
 
     return render(request, 'main/result.html', context={
             # to result
+            'identifier':identifier,
             'liArray':liArray, 
-            'countriesArray':countriesArray, 
+            'countriesArray':countriesArray,
+            'rank': rank, 
             'visitedNumber':visitedNumber, 
             'visitedArea':visitedArea, 
             'numberRatio':numberRatio, 
             'areaRatio':areaRatio, 
             'continentsCountArray':continentsCountArray,
-            'identifier':identifier,
-            'rank': rank,
+            'maxContinent': maxContinent,
             
             # to base
             'all':all, 

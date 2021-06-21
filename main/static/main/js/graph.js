@@ -9,13 +9,90 @@ function jsonSearch(searchKey, searchValue) {      // searchValue 를 name으로
     });
 }
 
-
 fetch("/static/main/js/data.json")
     .then(response => response.json())
     .then(json => { data_json2 = json })
     .then(() => {
-        
-       //<visitedNumber>
+
+        //<rankChart>
+        const sortedRatioDict = document.getElementById('sortedRatioDict')
+        // console.log(sortedRatioDict.value)
+        sortedRatioDictData = sortedRatioDict.value.slice(2, -2).split('), (')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
+
+        rankLabels = sortedRatioDictData.map(data => {
+            alpha3 = data.slice(1, 4)
+            let obj = jsonSearch('alpha3', alpha3)[0]
+            let labelKr = obj.nameKr
+            return labelKr
+        })
+        // console.log(rankLabels)
+
+
+        rankData = sortedRatioDictData.map(data => Number(data.slice(7, 13)))
+        // console.log(rankData)
+        var rankChart = new Chart(
+            document.getElementById('rankChart'),
+            {
+                type: 'bar',
+
+                data: {
+                    labels: rankLabels,
+
+                    datasets: [{
+                        backgroundColor: ['#ffbe22', '#60aaf3', '#948dec', '#e53949', '#91bf39', '#fe7c02', '#4836f3'],
+                        borderColor: 'white',
+                        data: rankData
+                    }]
+                },
+
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: '%',
+                                align: 'center'
+                            }
+                        }
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: '여행 많이 간 나라 Top 10',
+                            font: {
+                                size: 20
+                            }
+                        },
+                        legend: {
+                            display: false,
+                        },
+
+                        labels: {
+                            // render: 'value',
+                            render: function (args) {
+                                return args.value + '%';
+                            },
+                        }
+
+                    }
+                }
+            }
+        );
+
+
+
+
+
+
+
+
+
+
+        //<visitedNumber>
         let visitedNumber = document.getElementById('visitedNumber')
         visitedNumber = Number(visitedNumber.value)
         // console.log(visitedNumber)
@@ -213,87 +290,6 @@ fetch("/static/main/js/data.json")
                         labels: {
                             render: 'percent',
                             precision: 1
-                        }
-
-                    }
-                }
-            }
-        );
-
-
-
-
-
-
-
-
-
-
-
-
-        //<rankChart>
-        const sortedRatioDict = document.getElementById('sortedRatioDict')
-        // console.log(sortedRatioDict.value)
-        sortedRatioDictData = sortedRatioDict.value.slice(2, -2).split('), (')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
-        // console.log(sortedRatioDictData)
-
-        rankLabels = sortedRatioDictData.map(data => {
-            alpha3 = data.slice(1, 4)
-            let obj = jsonSearch('alpha3', alpha3)[0]
-            let labelKr = obj.nameKr
-            return labelKr
-        })
-        // console.log(rankLabels)
-
-
-        rankData = sortedRatioDictData.map(data => Number(data.slice(7, 13)))
-        // console.log(rankData)
-        var rankChart = new Chart(
-            document.getElementById('rankChart'),
-            {
-                type: 'bar',
-
-                data: {
-                    labels: rankLabels,
-
-                    datasets: [{
-                        backgroundColor: ['#ffbe22', '#60aaf3', '#948dec', '#e53949', '#91bf39', '#fe7c02', '#4836f3'],
-                        borderColor: 'white',
-                        data: rankData
-                    }]
-                },
-
-                options: {
-                    indexAxis: 'y',
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: '%',
-                                align: 'center'
-                            }
-                        }
-                    },
-                    plugins: {
-                        datalabels: {
-                            display: false
-                        },
-                        title: {
-                            display: true,
-                            text: '여행 많이 간 나라 순위',
-                            font: {
-                                size: 20
-                            }
-                        },
-                        legend: {
-                            display: false,
-                        },
-
-                        labels: {
-                            // render: 'value',
-                            render: function (args) {
-                                return args.value + '%';
-                            },
                         }
 
                     }

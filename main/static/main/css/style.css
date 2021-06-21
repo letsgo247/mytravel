@@ -121,6 +121,10 @@ canvas {
     width: 100%;
 }
 
+.ment-container {
+    font-size: 1.5rem;
+    margin-top:1rem;
+}
 
 
 .chart-container {
@@ -128,6 +132,7 @@ canvas {
     width: 50vw;
     display: inline-block;
     max-width:500px;
+    margin-top: 10rem;
 }
 
 .rankChart-container {
@@ -151,7 +156,7 @@ a {
 
 form {
     margin-top: 1rem;
-    margin-bottom: 10rem;
+    margin-bottom: 1rem;
 }
 
 footer {
@@ -168,6 +173,7 @@ footer {
 
 .share-container {
     font-size: 1rem;
+    margin-top: 10rem;
 }
 
 a img {

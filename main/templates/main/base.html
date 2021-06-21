@@ -48,6 +48,24 @@
 
     {% endblock %}
 
+    <div>
+        <br>
+        <hr><br>
+        <h2>
+            <여최몇 참가자 통계>
+        </h2>
+        <br>
+        참가자 수: <strong>{{all.count}} 명</strong>
+        <br><br>
+        평균 여행 국가 수: <strong>{{averageCount}} 개국</strong>
+        <br><br><br>
+        <!-- 순위: {{sortedRatioDict}} -->
+        <input class='input' type="hidden" id='sortedRatioDict' value='{{ sortedRatioDict }}'>
+        <div class="rankChart-container">
+            <canvas id="rankChart"></canvas>
+        </div>
+    </div>
+
     <footer>
         ⓒ 2021 by <a href="http://letsgo247.net/contact.html" target="_blank">KARAMEL STUDIO</a>. All Rights Reserved
         <br>

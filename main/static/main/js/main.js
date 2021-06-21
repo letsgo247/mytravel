@@ -39,6 +39,7 @@ function drawMap () {
     })
     .then(() => markMap())
     .then(() => showTooltip())
+    .catch(error => showTooltip())  //catch 는 한 번의 사용으로 모든 then 에 대해서 해결할 수 있습니다.
 }
 
 
