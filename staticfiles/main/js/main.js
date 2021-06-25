@@ -3,8 +3,8 @@
 const svg = d3.select('svg');
 
 const projection = d3.geoMercator()
-                        .center([-30, 30])
-                        .scale(300)
+                        .center([0, 40])
+                        .scale(200)
                         .rotate([-150,0]);
 // const projection = d3.geoNaturalEarth1();
 // const projection = d3.geoEqualEarth();
@@ -17,16 +17,34 @@ svg.call(d3.zoom().on('zoom', (event) => {
 }))
 
 
-d3.json('./static/main/js/countries-110m.json') // or 50m
+
+function nameToCode (name) {    //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
+    return name.replaceAll(" ","").replaceAll('.','')
+}
+
+
+
+function drawMap () {
+    d3.json('/static/main/js/countries-110m.json') // or 50m
     .then(data => {
         const countries = topojson.feature(data, data.objects.countries);
+        // console.log(countries.features)
 
         g.selectAll('path').data(countries.features)
             .enter().append('path')
             .attr('class', 'country')
             .attr('d', d=>pathGenerator(d))
+            .attr('id', d=>nameToCode(d.properties.name))
 
-        tooltipSelection = d3.select('body')
+    })
+    .then(() => markMap())
+    .then(() => showTooltip())
+    .catch(error => showTooltip())  //catch 는 한 번의 사용으로 모든 then 에 대해서 해결할 수 있습니다.
+}
+
+
+function showTooltip() {
+    tooltipSelection = d3.select('body')
             .append('div')
             .attr('class', 'hover-info')
             .style('visibility', 'hidden');
@@ -37,10 +55,10 @@ d3.json('./static/main/js/countries-110m.json') // or 50m
             })
 
             .on('mousemove', ({pageX, pageY, target}) => {
-                console.log(target.__data__.properties.name);
-                console.log(filterIt(target.__data__.properties.name))
+                // console.log(target.__data__.properties.name);
+                // console.log(filterIt(target.__data__.properties.name))
                 let obj = filterIt(target.__data__.properties.name)[0]
-                console.log(obj);
+                // console.log(obj);
                 tooltipSelection
                     .style('top', `${pageY + 20}px`)
                     .style('left', `${pageX - 10}px`)
@@ -51,10 +69,30 @@ d3.json('./static/main/js/countries-110m.json') // or 50m
             .on('mouseleave', ({target}) => {
                 tooltipSelection.style('visibility', 'hidden');
             })
+}
+
+
+function markMap() {
+    if (document.querySelector('#countriesArray')) {
+        // console.log('있네 있어')
+        selectedArrayString = document.querySelector('#countriesArray').value;
+        // console.log(selectedArrayString);
+        selectedArray = selectedArrayString.slice(1, -1).split(', ')  // string을 받아와서 불필요한 괄호 제거하고 array로 변환
+        // console.log(selectedArray)
+        selectedArray.forEach(d => {
+            // console.log(d)
+            code = nameToCode(d.slice(1, -1))
+            // console.log(code)
+            selected = document.querySelector(`#${code}`)
+            // console.log(selected)
+            selected.classList.add('selected');
         })
-
-
-
+    }
+    
+    else {
+        // console.log('index인가벼...')
+    }
+}
 
 
 
@@ -62,9 +100,13 @@ d3.json('./static/main/js/countries-110m.json') // or 50m
 // <이모지 로딩 위한 빌드업>
 let data_json = {}
 
-fetch("./static/main/js/data.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
+fetch("/static/main/js/data.json")    // 이름 안맞는 애들 나중에 수작업으로 고치려고 emoji.json 따로 받아둠
   .then(response => response.json())
   .then(json => {data_json = json})
+  .then(() => drawMap())
+
+
+// window.addEventListener('DOMContentLoaded', markMap())
 
 
 function filterIt(searchValue) {      // searchValue 를 name으로 갖는 object 리턴하는 함수
@@ -77,9 +119,6 @@ function filterIt(searchValue) {      // searchValue 를 name으로 갖는 objec
 
 
 
-
-
-
 // <array handling 파트>
 
 const gLayer = document.querySelector('g')
@@ -87,14 +126,14 @@ const ol = document.querySelector('ol')
 // console.log(gLayer);
 // console.log(ol);
 const countriesArray = [];
-const liArray = [];
+// const liArray = [];
 
 function gLayer_listener () {
     gLayer.addEventListener('click', event=>{
     let data = event.target.__data__;
 
     let name = data.properties.name;
-    let code = name.replaceAll(" ","").replaceAll('.','')   //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
+    code = nameToCode(name)   //빈칸이나 . 있으면 클래스로 못 찾아서, purify.
     
     if (countriesArray.includes(name)) { 
         //기존에 있으면
@@ -111,7 +150,7 @@ function gLayer_listener () {
 function addCountry (event,name,code) {
     //일단 색깔 칠하고
     event.target.classList.add('selected');
-    event.target.id = code;
+    // event.target.id = code;  // 미리 모든 나라에 달아둠
     // event.target.setAttribute('style', 'fill:orange')
 
     //어레이에 추가
@@ -125,7 +164,7 @@ function addCountry (event,name,code) {
     li.innerHTML = `<img src="${url}" alt=${name}> ${nameKr}`
     ol.appendChild(li);
 
-    liArray.push(li.innerHTML);
+    // liArray.push(li.innerHTML);
 
     //추가된 리스트에 휴지통 method 추가
     hover_listener(li,name,code);
@@ -150,12 +189,12 @@ function removeCountry (name,code) {
     let innerHTML = li.innerHTML
     
     if (innerHTML.includes('/span')) {
-        console.log(true);
+        // console.log(true);
         innerHTML = innerHTML.slice(0,-17);
     }   // 휴지통으로 삭제 시 list의 span 땜에 에러나는거 방지용!
 
-    let idx2 = liArray.indexOf(innerHTML);
-    if (idx2 > -1) liArray.splice(idx2,1);
+    // let idx2 = liArray.indexOf(innerHTML);
+    // if (idx2 > -1) liArray.splice(idx2,1);
 }
 
 
@@ -166,10 +205,10 @@ function removeCountry (name,code) {
 function submit_listener () {   // 선택된 array ajax 처리로 post 보내주는 함수!!!
     $('.submit').on('mouseover', () => {
         $('.input')[0].value = countriesArray
-        console.log($('.input')[0].value)
+        // console.log($('.input')[0].value)
 
-        $('.input2')[0].value = liArray
-        console.log($('.input2')[0].value)
+        // $('.input2')[0].value = liArray
+        // console.log($('.input2')[0].value)
 
 
     })
@@ -199,10 +238,56 @@ function hover_listener (li,name,code) {
 
 
 
+Kakao.init('84d8fd6fde6bfa9abdb90d8b5557c9d6');
+// console.log(Kakao)
+
+
+function kakaoInit() {
+    // console.log('실행?')
+    console.log(window.location.href)   // 현재 열려있는 url
+
+    Kakao.Link.sendDefault({
+        // container: ".kakao-link", // 공유하기 기능을 부여할 DOM container
+        objectType: "feed", // 피드타입
+        content: {
+          title: "여최몇?",
+          description:
+            "그 동안 여행했던 나라를 모두 선택해주세요! 재미있는 통계 결과를 알려드립니다.",
+          imageUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_Map_Blank.svg/2753px-World_Map_Blank.svg.png",
+          link: {
+            webUrl: `${window.location.href}`, // 카카오 PC에서 확인할 때 연결될 웹 url
+            mobileWebUrl: `${window.location.href}`, // 카카오 앱에서 확인할 때 연결될 웹 url
+          },
+        },
+      });
+}
+
+
+
+function copy_to_clipboard() {
+    // let t = document.createElement('textarea');
+    // document.body.appendChild(t);
+    // let link = window.location.href;
+    // t.value = link
+    // console.log(link);
+    let t = document.querySelector('#share-link');
+    console.log(t)
+    t.select();
+    document.execCommand('copy');
+    alert('공유 링크가 클립보드로 복사되었습니다!');
+    // document.body.removeChild(t);
+}
+
+
+
 
 function init() {
-    gLayer_listener()
-    submit_listener()
+    if (document.querySelector('#countriesArray')) {}   // result로 가서 countriesArray가 있으면 pass, 아니면 아래 listener 실행하기
+    else {
+        gLayer_listener();
+        submit_listener();
+    }
 }
 
 init();
