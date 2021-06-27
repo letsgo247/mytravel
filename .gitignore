@@ -9,4 +9,4 @@ Dockerfile
 nginx.conf
 # /main/migrations/*
 # !/main/migrations/__init__.py
-db.sqlite3
+# db.sqlite3
