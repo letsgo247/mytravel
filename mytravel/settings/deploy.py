@@ -30,13 +30,20 @@ ALLOWED_HOSTS = ['141.164.37.184']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mariadb',
+#         'USER': 'root',
+#         'PASSWORD': 'password1234',
+#         'HOST': 'mariadb_container',
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mariadb',
-        'USER': 'root',
-        'PASSWORD': 'password1234',
-        'HOST': 'mariadb_container',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
