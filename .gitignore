@@ -1,5 +1,4 @@
 .idea
-# db.sqlite3
 /.env
 /venv/
 *.pyc
@@ -8,3 +7,5 @@ __pycache__
 /.vscode/
 Dockerfile
 nginx.conf
+/main/migrations/*
+db.sqlite3
