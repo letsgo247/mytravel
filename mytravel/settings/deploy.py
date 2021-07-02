@@ -1,15 +1,15 @@
 from .base import *
 
 
-import environ
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-# reading .env file
-environ.Env.read_env(
-    env_file= os.path.join(BASE_DIR, '.env')
-)
+# import environ
+# env = environ.Env(
+#     # set casting, default value
+#     DEBUG=(bool, False)
+# )
+# # reading .env file
+# environ.Env.read_env(
+#     env_file= os.path.join(BASE_DIR, '.env')
+# )
 
 
 def read_secret(secret_file):
@@ -29,7 +29,7 @@ SECRET_KEY = read_secret('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['141.164.37.184']
+ALLOWED_HOSTS = ['*']
 
 
 

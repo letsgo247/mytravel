@@ -11,3 +11,5 @@ docker-compose.yml
 # /main/migrations/*
 # !/main/migrations/__init__.py
 # db.sqlite3
+aws_mytravel_key.pem
+aws_mytravel_key.ppk
