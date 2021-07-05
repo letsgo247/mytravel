@@ -283,7 +283,11 @@ function copy_to_clipboard() {
 
 
 function init() {
-    if (document.querySelector('#countriesArray')) {}   // result로 가서 countriesArray가 있으면 pass, 아니면 아래 listener 실행하기
+    // result로 가서 countriesArray가 있으면(=result 페이지로 확인되면) result에 필요한 함수, 아니면 아래 listener 실행하기
+    if (document.querySelector('#countriesArray')) {  
+        location.href="#";
+        location.href="#result";    // 가독성 위해 결과 섹션으로 자동 이동!
+    }   
     else {
         gLayer_listener();
         submit_listener();
