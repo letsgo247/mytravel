@@ -1,0 +1,1593 @@
+[
+    {
+        "id": "242",
+        "name": "Fiji",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Fiji.svg",
+        "area": 18274.0,
+        "continent": "Oceania",
+        "nameKr": "피지",
+        "alpha3": "FJI"
+    },
+    {
+        "id": "834",
+        "name": "Tanzania",
+        "url": "//upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania.svg",
+        "continent": "Africa",
+        "area": 883749.0,
+        "nameKr": "탄자니아",
+        "alpha3": "TZA"
+    },
+    {
+        "id": "732",
+        "name": "W. Sahara",
+        "url": "",
+        "area": 266000.0,
+        "continent": "Africa",
+        "nameKr": "서사하라",
+        "alpha3": "ESH"
+    },
+    {
+        "id": "124",
+        "name": "Canada",
+        "url": "//upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg",
+        "continent": "North America",
+        "area": 9970610.0,
+        "nameKr": "캐나다",
+        "alpha3": "CAN"
+    },
+    {
+        "id": "840",
+        "name": "United States of America",
+        "url": "//upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+        "area": 9363520.0,
+        "continent": "North America",
+        "nameKr": "미국",
+        "alpha3": "USA"
+    },
+    {
+        "id": "398",
+        "name": "Kazakhstan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan.svg",
+        "continent": "Asia",
+        "area": 2724900.0,
+        "nameKr": "카자흐스탄",
+        "alpha3": "KAZ"
+    },
+    {
+        "id": "860",
+        "name": "Uzbekistan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Uzbekistan.svg",
+        "continent": "Asia",
+        "area": 447400.0,
+        "nameKr": "우즈베키스탄",
+        "alpha3": "UZB"
+    },
+    {
+        "id": "598",
+        "name": "Papua New Guinea",
+        "url": "//upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Papua_New_Guinea.svg",
+        "continent": "Oceania",
+        "area": 462840.0,
+        "nameKr": "파푸아 뉴기니",
+        "alpha3": "PNG"
+    },
+    {
+        "id": "360",
+        "name": "Indonesia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg",
+        "continent": "Asia",
+        "area": 1904569.0,
+        "nameKr": "인도네시아",
+        "alpha3": "IDN"
+    },
+    {
+        "id": "032",
+        "name": "Argentina",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg",
+        "continent": "South America",
+        "area": 2780400.0,
+        "nameKr": "아르헨티나",
+        "alpha3": "ARG"
+    },
+    {
+        "id": "152",
+        "name": "Chile",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg",
+        "continent": "South America",
+        "area": 756626.0,
+        "nameKr": "칠레",
+        "alpha3": "CHL"
+    },
+    {
+        "id": "180",
+        "name": "Dem. Rep. Congo",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg",
+        "area": 2344858.0,
+        "continent": "Africa",
+        "nameKr": "콩고 민주 공화국",
+        "alpha3": "COD"
+    },
+    {
+        "id": "706",
+        "name": "Somalia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia.svg",
+        "continent": "Africa",
+        "area": 637657.0,
+        "nameKr": "소말리아",
+        "alpha3": "SOM"
+    },
+    {
+        "id": "404",
+        "name": "Kenya",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg",
+        "continent": "Africa",
+        "area": 580367.0,
+        "nameKr": "케냐",
+        "alpha3": "KEN"
+    },
+    {
+        "id": "729",
+        "name": "Sudan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Sudan.svg",
+        "continent": "Africa",
+        "area": 1886068.0,
+        "nameKr": "수단",
+        "alpha3": "SDN"
+    },
+    {
+        "id": "148",
+        "name": "Chad",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/4b/Flag_of_Chad.svg",
+        "continent": "Africa",
+        "area": 1284000.0,
+        "nameKr": "차드",
+        "alpha3": "TCD"
+    },
+    {
+        "id": "332",
+        "name": "Haiti",
+        "url": "//upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Haiti.svg",
+        "continent": "North America",
+        "area": 27750.0,
+        "nameKr": "아이티",
+        "alpha3": "HTI"
+    },
+    {
+        "id": "214",
+        "name": "Dominican Rep.",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_the_Dominican_Republic.svg",
+        "area": 48511.0,
+        "continent": "North America",
+        "nameKr": "도미니카 공화국",
+        "alpha3": "DOM"
+    },
+    {
+        "id": "643",
+        "name": "Russia",
+        "url": "//upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg",
+        "area": 17075400.0,
+        "continent": "Europe",
+        "nameKr": "러시아",
+        "alpha3": "RUS"
+    },
+    {
+        "id": "044",
+        "name": "Bahamas",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/93/Flag_of_the_Bahamas.svg",
+        "continent": "North America",
+        "area": 13878.0,
+        "nameKr": "바하마",
+        "alpha3": "BHS"
+    },
+    {
+        "id": "238",
+        "name": "Falkland Is.",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_Falkland_Islands.svg",
+        "area": 12173.0,
+        "continent": "South America",
+        "nameKr": "포클랜드 제도",
+        "alpha3": "FLK"
+    },
+    {
+        "id": "578",
+        "name": "Norway",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg",
+        "continent": "Europe",
+        "area": 323877.0,
+        "nameKr": "노르웨이",
+        "alpha3": "NOR"
+    },
+    {
+        "id": "304",
+        "name": "Greenland",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_Greenland.svg",
+        "continent": "North America",
+        "area": 2166090.0,
+        "nameKr": "그린란드",
+        "alpha3": "GRL"
+    },
+    {
+        "id": "260",
+        "name": "Fr. S. Antarctic Lands",
+        "url": "//upload.wikimedia.org/wikipedia/commons/a/a7/Flag_of_the_French_Southern_and_Antarctic_Lands.svg",
+        "area": 3903.0,
+        "continent": "Antarctica",
+        "nameKr": "프랑스령 남부와 남극 지역",
+        "alpha3": "ATF"
+    },
+    {
+        "id": "626",
+        "name": "Timor-Leste",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_East_Timor.svg",
+        "area": 14874.0,
+        "continent": "Asia",
+        "nameKr": "동티모르",
+        "alpha3": "TLS"
+    },
+    {
+        "id": "710",
+        "name": "South Africa",
+        "url": "//upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg",
+        "continent": "Africa",
+        "area": 1221037.0,
+        "nameKr": "남아프리카 공화국",
+        "alpha3": "ZAF"
+    },
+    {
+        "id": "426",
+        "name": "Lesotho",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/4a/Flag_of_Lesotho.svg",
+        "continent": "Africa",
+        "area": 30355.0,
+        "nameKr": "레소토",
+        "alpha3": "LSO"
+    },
+    {
+        "id": "484",
+        "name": "Mexico",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg",
+        "continent": "North America",
+        "area": 1958201.0,
+        "nameKr": "멕시코",
+        "alpha3": "MEX"
+    },
+    {
+        "id": "858",
+        "name": "Uruguay",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg",
+        "continent": "South America",
+        "area": 175016.0,
+        "nameKr": "우루과이",
+        "alpha3": "URY"
+    },
+    {
+        "id": "076",
+        "name": "Brazil",
+        "url": "//upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg",
+        "continent": "South America",
+        "area": 8547403.0,
+        "nameKr": "브라질",
+        "alpha3": "BRA"
+    },
+    {
+        "id": "068",
+        "name": "Bolivia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_Bolivia_%28state%29.svg",
+        "continent": "South America",
+        "area": 1098581.0,
+        "nameKr": "볼리비아",
+        "alpha3": "BOL"
+    },
+    {
+        "id": "604",
+        "name": "Peru",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg",
+        "continent": "South America",
+        "area": 1285216.0,
+        "nameKr": "페루",
+        "alpha3": "PER"
+    },
+    {
+        "id": "170",
+        "name": "Colombia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
+        "continent": "South America",
+        "area": 1138914.0,
+        "nameKr": "콜롬비아",
+        "alpha3": "COL"
+    },
+    {
+        "id": "591",
+        "name": "Panama",
+        "url": "//upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg",
+        "continent": "North America",
+        "area": 75517.0,
+        "nameKr": "파나마",
+        "alpha3": "PAN"
+    },
+    {
+        "id": "188",
+        "name": "Costa Rica",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Costa_Rica_%28state%29.svg",
+        "continent": "North America",
+        "area": 51100.0,
+        "nameKr": "코스타리카",
+        "alpha3": "CRI"
+    },
+    {
+        "id": "558",
+        "name": "Nicaragua",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Nicaragua.svg",
+        "continent": "North America",
+        "area": 130000.0,
+        "nameKr": "니카라과",
+        "alpha3": "NIC"
+    },
+    {
+        "id": "340",
+        "name": "Honduras",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/82/Flag_of_Honduras.svg",
+        "continent": "North America",
+        "area": 112088.0,
+        "nameKr": "온두라스",
+        "alpha3": "HND"
+    },
+    {
+        "id": "222",
+        "name": "El Salvador",
+        "url": "//upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador.svg",
+        "continent": "North America",
+        "area": 21041.0,
+        "nameKr": "엘살바도르",
+        "alpha3": "SLV"
+    },
+    {
+        "id": "320",
+        "name": "Guatemala",
+        "url": "//upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Guatemala.svg",
+        "continent": "North America",
+        "area": 108889.0,
+        "nameKr": "과테말라",
+        "alpha3": "GTM"
+    },
+    {
+        "id": "084",
+        "name": "Belize",
+        "url": "//upload.wikimedia.org/wikipedia/commons/e/e7/Flag_of_Belize.svg",
+        "continent": "North America",
+        "area": 22696.0,
+        "nameKr": "벨리즈",
+        "alpha3": "BLZ"
+    },
+    {
+        "id": "862",
+        "name": "Venezuela",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg",
+        "continent": "South America",
+        "area": 912050.0,
+        "nameKr": "베네수엘라",
+        "alpha3": "VEN"
+    },
+    {
+        "id": "328",
+        "name": "Guyana",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_Guyana.svg",
+        "continent": "South America",
+        "area": 214969.0,
+        "nameKr": "가이아나",
+        "alpha3": "GUY"
+    },
+    {
+        "id": "740",
+        "name": "Suriname",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Suriname.svg",
+        "continent": "South America",
+        "area": 163265.0,
+        "nameKr": "수리남",
+        "alpha3": "SUR"
+    },
+    {
+        "id": "250",
+        "name": "France",
+        "url": "//upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg",
+        "continent": "Europe",
+        "area": 551500.0,
+        "nameKr": "프랑스",
+        "alpha3": "FRA"
+    },
+    {
+        "id": "218",
+        "name": "Ecuador",
+        "url": "//upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg",
+        "continent": "South America",
+        "area": 283561.0,
+        "nameKr": "에콰도르",
+        "alpha3": "ECU"
+    },
+    {
+        "id": "630",
+        "name": "Puerto Rico",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/28/Flag_of_Puerto_Rico.svg",
+        "continent": "North America",
+        "area": 8875.0,
+        "nameKr": "푸에르토리코",
+        "alpha3": "PRI"
+    },
+    {
+        "id": "388",
+        "name": "Jamaica",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg",
+        "continent": "North America",
+        "area": 10990.0,
+        "nameKr": "자메이카",
+        "alpha3": "JAM"
+    },
+    {
+        "id": "192",
+        "name": "Cuba",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg",
+        "continent": "North America",
+        "area": 110861.0,
+        "nameKr": "쿠바",
+        "alpha3": "CUB"
+    },
+    {
+        "id": "716",
+        "name": "Zimbabwe",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Zimbabwe.svg",
+        "continent": "Africa",
+        "area": 390757.0,
+        "nameKr": "짐바브웨",
+        "alpha3": "ZWE"
+    },
+    {
+        "id": "072",
+        "name": "Botswana",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_Botswana.svg",
+        "continent": "Africa",
+        "area": 581730.0,
+        "nameKr": "보츠와나",
+        "alpha3": "BWA"
+    },
+    {
+        "id": "516",
+        "name": "Namibia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Namibia.svg",
+        "continent": "Africa",
+        "area": 824292.0,
+        "nameKr": "나미비아",
+        "alpha3": "NAM"
+    },
+    {
+        "id": "686",
+        "name": "Senegal",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg",
+        "continent": "Africa",
+        "area": 196722.0,
+        "nameKr": "세네갈",
+        "alpha3": "SEN"
+    },
+    {
+        "id": "466",
+        "name": "Mali",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Mali.svg",
+        "continent": "Africa",
+        "area": 1240192.0,
+        "nameKr": "말리",
+        "alpha3": "MLI"
+    },
+    {
+        "id": "478",
+        "name": "Mauritania",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/43/Flag_of_Mauritania.svg",
+        "continent": "Africa",
+        "area": 1025520.0,
+        "nameKr": "모리타니",
+        "alpha3": "MRT"
+    },
+    {
+        "id": "204",
+        "name": "Benin",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Benin.svg",
+        "continent": "Africa",
+        "area": 112622.0,
+        "nameKr": "베냉",
+        "alpha3": "BEN"
+    },
+    {
+        "id": "562",
+        "name": "Niger",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/f4/Flag_of_Niger.svg",
+        "continent": "Africa",
+        "area": 1267000.0,
+        "nameKr": "니제르",
+        "alpha3": "NER"
+    },
+    {
+        "id": "566",
+        "name": "Nigeria",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg",
+        "continent": "Africa",
+        "area": 923768.0,
+        "nameKr": "나이지리아",
+        "alpha3": "NGA"
+    },
+    {
+        "id": "120",
+        "name": "Cameroon",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg",
+        "continent": "Africa",
+        "area": 475442.0,
+        "nameKr": "카메룬",
+        "alpha3": "CMR"
+    },
+    {
+        "id": "768",
+        "name": "Togo",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_Togo.svg",
+        "continent": "Africa",
+        "area": 56785.0,
+        "nameKr": "토고",
+        "alpha3": "TGO"
+    },
+    {
+        "id": "288",
+        "name": "Ghana",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg",
+        "continent": "Africa",
+        "area": 238533.0,
+        "nameKr": "가나",
+        "alpha3": "GHA"
+    },
+    {
+        "id": "384",
+        "name": "Ivory Coast",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg",
+        "area": 322463.0,
+        "continent": "Africa",
+        "nameKr": "코트디부아르",
+        "alpha3": "CIV"
+    },
+    {
+        "id": "324",
+        "name": "Guinea",
+        "url": "//upload.wikimedia.org/wikipedia/commons/e/ed/Flag_of_Guinea.svg",
+        "continent": "Africa",
+        "area": 245857.0,
+        "nameKr": "기니",
+        "alpha3": "GIN"
+    },
+    {
+        "id": "624",
+        "name": "Guinea-Bissau",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Guinea-Bissau.svg",
+        "continent": "Africa",
+        "area": 36125.0,
+        "nameKr": "기니비사우",
+        "alpha3": "GNB"
+    },
+    {
+        "id": "430",
+        "name": "Liberia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/b8/Flag_of_Liberia.svg",
+        "continent": "Africa",
+        "area": 111369.0,
+        "nameKr": "라이베리아",
+        "alpha3": "LBR"
+    },
+    {
+        "id": "694",
+        "name": "Sierra Leone",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Sierra_Leone.svg",
+        "continent": "Africa",
+        "area": 71740.0,
+        "nameKr": "시에라리온",
+        "alpha3": "SLE"
+    },
+    {
+        "id": "854",
+        "name": "Burkina Faso",
+        "url": "//upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Burkina_Faso.svg",
+        "continent": "Africa",
+        "area": 274000.0,
+        "nameKr": "부르키나파소",
+        "alpha3": "BFA"
+    },
+    {
+        "id": "140",
+        "name": "Central African Rep.",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Central_African_Republic.svg",
+        "area": 622984.0,
+        "continent": "Africa",
+        "nameKr": "중앙아프리카 공화국",
+        "alpha3": "CAF"
+    },
+    {
+        "id": "178",
+        "name": "Congo",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_the_Republic_of_the_Congo.svg",
+        "continent": "Africa",
+        "area": 342000.0,
+        "nameKr": "콩고 공화국",
+        "alpha3": "COG"
+    },
+    {
+        "id": "266",
+        "name": "Gabon",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/04/Flag_of_Gabon.svg",
+        "continent": "Africa",
+        "area": 267668.0,
+        "nameKr": "가봉",
+        "alpha3": "GAB"
+    },
+    {
+        "id": "226",
+        "name": "Eq. Guinea",
+        "url": "//upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Equatorial_Guinea.svg",
+        "area": 28051.0,
+        "continent": "Africa",
+        "nameKr": "적도 기니",
+        "alpha3": "GNQ"
+    },
+    {
+        "id": "894",
+        "name": "Zambia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg",
+        "continent": "Africa",
+        "area": 752618.0,
+        "nameKr": "잠비아",
+        "alpha3": "ZMB"
+    },
+    {
+        "id": "454",
+        "name": "Malawi",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Malawi.svg",
+        "continent": "Africa",
+        "area": 118484.0,
+        "nameKr": "말라위",
+        "alpha3": "MWI"
+    },
+    {
+        "id": "508",
+        "name": "Mozambique",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Mozambique.svg",
+        "continent": "Africa",
+        "area": 801590.0,
+        "nameKr": "모잠비크",
+        "alpha3": "MOZ"
+    },
+    {
+        "id": "748",
+        "name": "Swaziland",
+        "nameKr": "스와질란드",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/1e/Flag_of_Swaziland.svg",
+        "area": 17364.0,
+        "continent": "Africa",
+        "alpha3": "SWZ"
+    },
+    {
+        "id": "024",
+        "name": "Angola",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg",
+        "continent": "Africa",
+        "area": 1246700.0,
+        "nameKr": "앙골라",
+        "alpha3": "AGO"
+    },
+    {
+        "id": "108",
+        "name": "Burundi",
+        "url": "//upload.wikimedia.org/wikipedia/commons/5/50/Flag_of_Burundi.svg",
+        "continent": "Africa",
+        "area": 27834.0,
+        "nameKr": "부룬디",
+        "alpha3": "BDI"
+    },
+    {
+        "id": "376",
+        "name": "Israel",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg",
+        "continent": "Asia",
+        "area": 21056.0,
+        "nameKr": "이스라엘",
+        "alpha3": "ISR"
+    },
+    {
+        "id": "422",
+        "name": "Lebanon",
+        "url": "//upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Lebanon.svg",
+        "continent": "Asia",
+        "area": 10400.0,
+        "nameKr": "레바논",
+        "alpha3": "LBN"
+    },
+    {
+        "id": "450",
+        "name": "Madagascar",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Madagascar.svg",
+        "continent": "Africa",
+        "area": 587041.0,
+        "nameKr": "마다가스카르",
+        "alpha3": "MDG"
+    },
+    {
+        "id": "275",
+        "name": "Palestine",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg",
+        "continent": "Asia",
+        "area": 6257.0,
+        "nameKr": "팔레스타인",
+        "alpha3": "PSE"
+    },
+    {
+        "id": "270",
+        "name": "Gambia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_The_Gambia.svg",
+        "continent": "Africa",
+        "area": 11295.0,
+        "nameKr": "감비아",
+        "alpha3": "GMB"
+    },
+    {
+        "id": "788",
+        "name": "Tunisia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg",
+        "continent": "Africa",
+        "area": 163610.0,
+        "nameKr": "튀니지",
+        "alpha3": "TUN"
+    },
+    {
+        "id": "012",
+        "name": "Algeria",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg",
+        "continent": "Africa",
+        "area": 2381741.0,
+        "nameKr": "알제리",
+        "alpha3": "DZA"
+    },
+    {
+        "id": "400",
+        "name": "Jordan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg",
+        "continent": "Asia",
+        "area": 88946.0,
+        "nameKr": "요르단",
+        "alpha3": "JOR"
+    },
+    {
+        "id": "784",
+        "name": "United Arab Emirates",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg",
+        "continent": "Asia",
+        "area": 83600.0,
+        "nameKr": "아랍에미리트",
+        "alpha3": "ARE"
+    },
+    {
+        "id": "634",
+        "name": "Qatar",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg",
+        "continent": "Asia",
+        "area": 11000.0,
+        "nameKr": "카타르",
+        "alpha3": "QAT"
+    },
+    {
+        "id": "414",
+        "name": "Kuwait",
+        "url": "//upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Kuwait.svg",
+        "continent": "Asia",
+        "area": 17818.0,
+        "nameKr": "쿠웨이트",
+        "alpha3": "KWT"
+    },
+    {
+        "id": "368",
+        "name": "Iraq",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq.svg",
+        "continent": "Asia",
+        "area": 438317.0,
+        "nameKr": "이라크",
+        "alpha3": "IRQ"
+    },
+    {
+        "id": "512",
+        "name": "Oman",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman.svg",
+        "continent": "Asia",
+        "area": 309500.0,
+        "nameKr": "오만",
+        "alpha3": "OMN"
+    },
+    {
+        "id": "548",
+        "name": "Vanuatu",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Vanuatu.svg",
+        "continent": "Oceania",
+        "area": 12189.0,
+        "nameKr": "바누아투",
+        "alpha3": "VUT"
+    },
+    {
+        "id": "116",
+        "name": "Cambodia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg",
+        "continent": "Asia",
+        "area": 181035.0,
+        "nameKr": "캄보디아",
+        "alpha3": "KHM"
+    },
+    {
+        "id": "764",
+        "name": "Thailand",
+        "url": "//upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg",
+        "continent": "Asia",
+        "area": 513115.0,
+        "nameKr": "타이",
+        "alpha3": "THA"
+    },
+    {
+        "id": "418",
+        "name": "Laos",
+        "url": "//upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Laos.svg",
+        "continent": "Asia",
+        "area": 236800.0,
+        "nameKr": "라오스",
+        "alpha3": "LAO"
+    },
+    {
+        "id": "104",
+        "name": "Myanmar",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar.svg",
+        "continent": "Asia",
+        "area": 676578.0,
+        "nameKr": "미얀마",
+        "alpha3": "MMR"
+    },
+    {
+        "id": "704",
+        "name": "Vietnam",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg",
+        "continent": "Asia",
+        "area": 331689.0,
+        "nameKr": "베트남",
+        "alpha3": "VNM"
+    },
+    {
+        "id": "408",
+        "name": "North Korea",
+        "url": "//upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg",
+        "continent": "Asia",
+        "area": 120538.0,
+        "nameKr": "조선민주주의인민공화국",
+        "alpha3": "PRK"
+    },
+    {
+        "id": "410",
+        "name": "South Korea",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
+        "continent": "Asia",
+        "area": 99434.0,
+        "nameKr": "대한민국",
+        "alpha3": "KOR"
+    },
+    {
+        "id": "496",
+        "name": "Mongolia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg",
+        "continent": "Asia",
+        "area": 1566500.0,
+        "nameKr": "몽골",
+        "alpha3": "MNG"
+    },
+    {
+        "id": "356",
+        "name": "India",
+        "url": "//upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
+        "continent": "Asia",
+        "area": 3287263.0,
+        "nameKr": "인도",
+        "alpha3": "IND"
+    },
+    {
+        "id": "050",
+        "name": "Bangladesh",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg",
+        "continent": "Asia",
+        "area": 143998.0,
+        "nameKr": "방글라데시",
+        "alpha3": "BGD"
+    },
+    {
+        "id": "064",
+        "name": "Bhutan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/91/Flag_of_Bhutan.svg",
+        "continent": "Asia",
+        "area": 47000.0,
+        "nameKr": "부탄",
+        "alpha3": "BTN"
+    },
+    {
+        "id": "524",
+        "name": "Nepal",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg",
+        "continent": "Asia",
+        "area": 147181.0,
+        "nameKr": "네팔",
+        "alpha3": "NPL"
+    },
+    {
+        "id": "586",
+        "name": "Pakistan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg",
+        "continent": "Asia",
+        "area": 796095.0,
+        "nameKr": "파키스탄",
+        "alpha3": "PAK"
+    },
+    {
+        "id": "004",
+        "name": "Afghanistan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Afghanistan.svg",
+        "continent": "Asia",
+        "area": 652090.0,
+        "nameKr": "아프가니스탄",
+        "alpha3": "AFG"
+    },
+    {
+        "id": "762",
+        "name": "Tajikistan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Tajikistan.svg",
+        "continent": "Asia",
+        "area": 143100.0,
+        "nameKr": "타지키스탄",
+        "alpha3": "TJK"
+    },
+    {
+        "id": "417",
+        "name": "Kyrgyzstan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/c7/Flag_of_Kyrgyzstan.svg",
+        "continent": "Asia",
+        "area": 199900.0,
+        "nameKr": "키르기스스탄",
+        "alpha3": "KGZ"
+    },
+    {
+        "id": "795",
+        "name": "Turkmenistan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Turkmenistan.svg",
+        "continent": "Asia",
+        "area": 488100.0,
+        "nameKr": "투르크메니스탄",
+        "alpha3": "TKM"
+    },
+    {
+        "id": "364",
+        "name": "Iran",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg",
+        "continent": "Asia",
+        "area": 1648195.0,
+        "nameKr": "이란",
+        "alpha3": "IRN"
+    },
+    {
+        "id": "760",
+        "name": "Syria",
+        "url": "//upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg",
+        "continent": "Asia",
+        "area": 185180.0,
+        "nameKr": "시리아",
+        "alpha3": "SYR"
+    },
+    {
+        "id": "051",
+        "name": "Armenia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Armenia.svg",
+        "continent": "Asia",
+        "area": 29800.0,
+        "nameKr": "아르메니아",
+        "alpha3": "ARM"
+    },
+    {
+        "id": "752",
+        "name": "Sweden",
+        "url": "//upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg",
+        "continent": "Europe",
+        "area": 449964.0,
+        "nameKr": "스웨덴",
+        "alpha3": "SWE"
+    },
+    {
+        "id": "112",
+        "name": "Belarus",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Belarus.svg",
+        "continent": "Europe",
+        "area": 207600.0,
+        "nameKr": "벨라루스",
+        "alpha3": "BLR"
+    },
+    {
+        "id": "804",
+        "name": "Ukraine",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg",
+        "continent": "Europe",
+        "area": 603700.0,
+        "nameKr": "우크라이나",
+        "alpha3": "UKR"
+    },
+    {
+        "id": "616",
+        "name": "Poland",
+        "url": "//upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg",
+        "continent": "Europe",
+        "area": 323250.0,
+        "nameKr": "폴란드",
+        "alpha3": "POL"
+    },
+    {
+        "id": "040",
+        "name": "Austria",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg",
+        "continent": "Europe",
+        "area": 83859.0,
+        "nameKr": "오스트리아",
+        "alpha3": "AUT"
+    },
+    {
+        "id": "348",
+        "name": "Hungary",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg",
+        "continent": "Europe",
+        "area": 93030.0,
+        "nameKr": "헝가리",
+        "alpha3": "HUN"
+    },
+    {
+        "id": "498",
+        "name": "Moldova",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg",
+        "continent": "Europe",
+        "area": 33851.0,
+        "nameKr": "몰도바",
+        "alpha3": "MDA"
+    },
+    {
+        "id": "642",
+        "name": "Romania",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg",
+        "continent": "Europe",
+        "area": 238391.0,
+        "nameKr": "루마니아",
+        "alpha3": "ROU"
+    },
+    {
+        "id": "440",
+        "name": "Lithuania",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Lithuania.svg",
+        "continent": "Europe",
+        "area": 65301.0,
+        "nameKr": "리투아니아",
+        "alpha3": "LTU"
+    },
+    {
+        "id": "428",
+        "name": "Latvia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Latvia.svg",
+        "continent": "Europe",
+        "area": 64589.0,
+        "nameKr": "라트비아",
+        "alpha3": "LVA"
+    },
+    {
+        "id": "233",
+        "name": "Estonia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/8f/Flag_of_Estonia.svg",
+        "continent": "Europe",
+        "area": 45227.0,
+        "nameKr": "에스토니아",
+        "alpha3": "EST"
+    },
+    {
+        "id": "276",
+        "name": "Germany",
+        "url": "//upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
+        "continent": "Europe",
+        "area": 357022.0,
+        "nameKr": "독일",
+        "alpha3": "DEU"
+    },
+    {
+        "id": "100",
+        "name": "Bulgaria",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg",
+        "continent": "Europe",
+        "area": 110994.0,
+        "nameKr": "불가리아",
+        "alpha3": "BGR"
+    },
+    {
+        "id": "300",
+        "name": "Greece",
+        "url": "//upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg",
+        "continent": "Europe",
+        "area": 131626.0,
+        "nameKr": "그리스",
+        "alpha3": "GRC"
+    },
+    {
+        "id": "792",
+        "name": "Turkey",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
+        "continent": "Asia",
+        "area": 774815.0,
+        "nameKr": "터키",
+        "alpha3": "TUR"
+    },
+    {
+        "id": "008",
+        "name": "Albania",
+        "url": "//upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania.svg",
+        "continent": "Europe",
+        "area": 28748.0,
+        "nameKr": "알바니아",
+        "alpha3": "ALB"
+    },
+    {
+        "id": "191",
+        "name": "Croatia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg",
+        "continent": "Europe",
+        "area": 56538.0,
+        "nameKr": "크로아티아",
+        "alpha3": "HRV"
+    },
+    {
+        "id": "756",
+        "name": "Switzerland",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Switzerland_%28Pantone%29.svg",
+        "continent": "Europe",
+        "area": 41284.0,
+        "nameKr": "스위스",
+        "alpha3": "CHE"
+    },
+    {
+        "id": "442",
+        "name": "Luxembourg",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/da/Flag_of_Luxembourg.svg",
+        "continent": "Europe",
+        "area": 2586.0,
+        "nameKr": "룩셈부르크",
+        "alpha3": "LUX"
+    },
+    {
+        "id": "056",
+        "name": "Belgium",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg",
+        "continent": "Europe",
+        "area": 30518.0,
+        "nameKr": "벨기에",
+        "alpha3": "BEL"
+    },
+    {
+        "id": "528",
+        "name": "Netherlands",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg",
+        "continent": "Europe",
+        "area": 41526.0,
+        "nameKr": "네덜란드",
+        "alpha3": "NLD"
+    },
+    {
+        "id": "620",
+        "name": "Portugal",
+        "url": "//upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg",
+        "continent": "Europe",
+        "area": 91982.0,
+        "nameKr": "포르투갈",
+        "alpha3": "PRT"
+    },
+    {
+        "id": "724",
+        "name": "Spain",
+        "url": "//upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg",
+        "continent": "Europe",
+        "area": 505992.0,
+        "nameKr": "스페인",
+        "alpha3": "ESP"
+    },
+    {
+        "id": "372",
+        "name": "Ireland",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg",
+        "continent": "Europe",
+        "area": 70273.0,
+        "nameKr": "아일랜드",
+        "alpha3": "IRL"
+    },
+    {
+        "id": "540",
+        "name": "New Caledonia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/23/Flag_of_New_Caledonia.svg",
+        "continent": "Oceania",
+        "area": 18575.0,
+        "nameKr": "누벨칼레도니",
+        "alpha3": "NCL"
+    },
+    {
+        "id": "090",
+        "name": "Solomon Is.",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/74/Flag_of_the_Solomon_Islands.svg",
+        "area": 28896.0,
+        "continent": "Oceania",
+        "nameKr": "솔로몬 제도",
+        "alpha3": "SLB"
+    },
+    {
+        "id": "554",
+        "name": "New Zealand",
+        "url": "//upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg",
+        "continent": "Oceania",
+        "area": 270534.0,
+        "nameKr": "뉴질랜드",
+        "alpha3": "NZL"
+    },
+    {
+        "id": "036",
+        "name": "Australia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
+        "continent": "Oceania",
+        "area": 7741220.0,
+        "nameKr": "오스트레일리아",
+        "alpha3": "AUS"
+    },
+    {
+        "id": "144",
+        "name": "Sri Lanka",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg",
+        "continent": "Asia",
+        "area": 65610.0,
+        "nameKr": "스리랑카",
+        "alpha3": "LKA"
+    },
+    {
+        "id": "156",
+        "name": "China",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg",
+        "continent": "Asia",
+        "area": 9572900.0,
+        "nameKr": "중화인민공화국",
+        "alpha3": "CHN"
+    },
+    {
+        "id": "158",
+        "name": "Taiwan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/72/Flag_of_the_Republic_of_China.svg",
+        "continent": "Asia",
+        "area": 36188.0,
+        "nameKr": "중화민국",
+        "alpha3": "TWN"
+    },
+    {
+        "id": "380",
+        "name": "Italy",
+        "url": "//upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg",
+        "continent": "Europe",
+        "area": 301316.0,
+        "nameKr": "이탈리아",
+        "alpha3": "ITA"
+    },
+    {
+        "id": "208",
+        "name": "Denmark",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg",
+        "continent": "Europe",
+        "area": 43094.0,
+        "nameKr": "덴마크",
+        "alpha3": "DNK"
+    },
+    {
+        "id": "826",
+        "name": "United Kingdom",
+        "url": "//upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg",
+        "continent": "Europe",
+        "area": 242900.0,
+        "nameKr": "영국",
+        "alpha3": "GBR"
+    },
+    {
+        "id": "352",
+        "name": "Iceland",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Iceland.svg",
+        "continent": "Europe",
+        "area": 103000.0,
+        "nameKr": "아이슬란드",
+        "alpha3": "ISL"
+    },
+    {
+        "id": "031",
+        "name": "Azerbaijan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg",
+        "continent": "Asia",
+        "area": 86600.0,
+        "nameKr": "아제르바이잔",
+        "alpha3": "AZE"
+    },
+    {
+        "id": "268",
+        "name": "Georgia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Georgia.svg",
+        "continent": "Asia",
+        "area": 69700.0,
+        "nameKr": "조지아",
+        "alpha3": "GEO"
+    },
+    {
+        "id": "608",
+        "name": "Philippines",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg",
+        "continent": "Asia",
+        "area": 300000.0,
+        "nameKr": "필리핀",
+        "alpha3": "PHL"
+    },
+    {
+        "id": "458",
+        "name": "Malaysia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg",
+        "continent": "Asia",
+        "area": 329758.0,
+        "nameKr": "말레이시아",
+        "alpha3": "MYS"
+    },
+    {
+        "id": "096",
+        "name": "Brunei",
+        "url": "//upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Brunei.svg",
+        "continent": "Asia",
+        "area": 5765.0,
+        "nameKr": "브루나이",
+        "alpha3": "BRN"
+    },
+    {
+        "id": "705",
+        "name": "Slovenia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/f0/Flag_of_Slovenia.svg",
+        "continent": "Europe",
+        "area": 20256.0,
+        "nameKr": "슬로베니아",
+        "alpha3": "SVN"
+    },
+    {
+        "id": "246",
+        "name": "Finland",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Finland.svg",
+        "continent": "Europe",
+        "area": 338145.0,
+        "nameKr": "핀란드",
+        "alpha3": "FIN"
+    },
+    {
+        "id": "703",
+        "name": "Slovakia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia.svg",
+        "continent": "Europe",
+        "area": 49012.0,
+        "nameKr": "슬로바키아",
+        "alpha3": "SVK"
+    },
+    {
+        "id": "203",
+        "name": "Czech Republic",
+        "url": "//upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg",
+        "area": 78866.0,
+        "continent": "Europe",
+        "nameKr": "체코",
+        "alpha3": "CZE"
+    },
+    {
+        "id": "232",
+        "name": "Eritrea",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/29/Flag_of_Eritrea.svg",
+        "continent": "Africa",
+        "area": 117600.0,
+        "nameKr": "에리트레아",
+        "alpha3": "ERI"
+    },
+    {
+        "id": "392",
+        "name": "Japan",
+        "url": "//upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg",
+        "continent": "Asia",
+        "area": 377829.0,
+        "nameKr": "일본",
+        "alpha3": "JPN"
+    },
+    {
+        "id": "600",
+        "name": "Paraguay",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Paraguay.svg",
+        "continent": "South America",
+        "area": 406752.0,
+        "nameKr": "파라과이",
+        "alpha3": "PRY"
+    },
+    {
+        "id": "887",
+        "name": "Yemen",
+        "url": "//upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Yemen.svg",
+        "continent": "Asia",
+        "area": 527968.0,
+        "nameKr": "예멘",
+        "alpha3": "YEM"
+    },
+    {
+        "id": "682",
+        "name": "Saudi Arabia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg",
+        "continent": "Asia",
+        "area": 2149690.0,
+        "nameKr": "사우디아라비아",
+        "alpha3": "SAU"
+    },
+    {
+        "id": "010",
+        "name": "Antarctica",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proposed_flag_of_Antarctica_%28Graham_Bartram%29.svg/1116px-Proposed_flag_of_Antarctica_%28Graham_Bartram%29.svg.png",
+        "continent": "Antarctica",
+        "area": 13120000.0,
+        "nameKr": "남극",
+        "alpha3": "ATA"
+    },
+    {
+        "id": "196",
+        "name": "N. Cyprus",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Cyprus.svg",
+        "area": 9251.0,
+        "continent": "Asia",
+        "nameKr": "키프로스",
+        "alpha3": "CYP"
+    },
+    {
+        "id": "196",
+        "name": "Cyprus",
+        "url": "//upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Cyprus.svg",
+        "continent": "Asia",
+        "area": 9251.0,
+        "nameKr": "키프로스",
+        "alpha3": "CYP"
+    },
+    {
+        "id": "504",
+        "name": "Morocco",
+        "url": "//upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg",
+        "continent": "Africa",
+        "area": 446550.0,
+        "nameKr": "모로코",
+        "alpha3": "MAR"
+    },
+    {
+        "id": "818",
+        "name": "Egypt",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg",
+        "continent": "Africa",
+        "area": 1001449.0,
+        "nameKr": "이집트",
+        "alpha3": "EGY"
+    },
+    {
+        "id": "434",
+        "name": "Libya",
+        "url": "//upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Libya.svg",
+        "area": 1759540.0,
+        "continent": "Africa",
+        "nameKr": "리비아",
+        "alpha3": "LBY"
+    },
+    {
+        "id": "231",
+        "name": "Ethiopia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg",
+        "continent": "Africa",
+        "area": 1104300.0,
+        "nameKr": "에티오피아",
+        "alpha3": "ETH"
+    },
+    {
+        "id": "262",
+        "name": "Djibouti",
+        "url": "//upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_Djibouti.svg",
+        "continent": "Africa",
+        "area": 23200.0,
+        "nameKr": "지부티",
+        "alpha3": "DJI"
+    },
+    {
+        "id": "706",
+        "name": "Somaliland",
+        "url": "//upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia.svg",
+        "area": 637657.0,
+        "continent": "Africa",
+        "nameKr": "소말리아",
+        "alpha3": "SOM"
+    },
+    {
+        "id": "800",
+        "name": "Uganda",
+        "url": "//upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg",
+        "continent": "Africa",
+        "area": 241038.0,
+        "nameKr": "우간다",
+        "alpha3": "UGA"
+    },
+    {
+        "id": "646",
+        "name": "Rwanda",
+        "url": "//upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Rwanda.svg",
+        "continent": "Africa",
+        "area": 26338.0,
+        "nameKr": "르완다",
+        "alpha3": "RWA"
+    },
+    {
+        "id": "070",
+        "name": "Bosnia and Herz.",
+        "url": "//upload.wikimedia.org/wikipedia/commons/b/bf/Flag_of_Bosnia_and_Herzegovina.svg",
+        "area": 51197.0,
+        "continent": "Europe",
+        "nameKr": "보스니아 헤르체고비나",
+        "alpha3": "BIH"
+    },
+    {
+        "id": "807",
+        "name": "Macedonia",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_North_Macedonia.svg",
+        "area": 25713.0,
+        "continent": "Europe",
+        "nameKr": "마케도니아 공화국",
+        "alpha3": "MKD"
+    },
+    {
+        "id": "688",
+        "name": "Serbia",
+        "url": "//upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Serbia.svg",
+        "continent": "Europe",
+        "area": 88361.0,
+        "nameKr": "세르비아",
+        "alpha3": "SRB"
+    },
+    {
+        "id": "499",
+        "name": "Montenegro",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Montenegro.svg",
+        "nameKr": "몬테네그로",
+        "area": 13812.0,
+        "alpha3": "MNE"
+    },
+    {
+        "id": "383",
+        "name": "Kosovo",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_Kosovo.svg",
+        "nameKr": "코소보",
+        "area": 10887.0,
+        "alpha3": "XKX"
+    },
+    {
+        "id": "780",
+        "name": "Trinidad and Tobago",
+        "url": "//upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Trinidad_and_Tobago.svg",
+        "continent": "North America",
+        "area": 5130.0,
+        "nameKr": "트리니다드 토바고",
+        "alpha3": "TTO"
+    },
+    {
+        "id": "728",
+        "name": "S. Sudan",
+        "url": "//upload.wikimedia.org/wikipedia/commons/7/7a/Flag_of_South_Sudan.svg",
+        "area": 619745.0,
+        "continent": "Africa",
+        "nameKr": "남수단",
+        "alpha3": "SSD"
+    }
+]
