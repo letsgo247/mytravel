@@ -262,6 +262,7 @@ function kakaoInit() {
         },
       });
 }
+// 카톡 공유 접근 도메인 설정: https://developers.kakao.com/console/app/598985/config/platform
 
 
 
