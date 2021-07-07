@@ -13,3 +13,4 @@ docker-compose.yml
 # db.sqlite3
 aws_mytravel_key.pem
 aws_mytravel_key.ppk
+DJANGO_SECRET_KEY
