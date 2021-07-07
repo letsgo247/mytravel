@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<div style="margin:1rem"><strong>아래에서 결과를 확인하세요!<br>👇</strong></div>
+
 <section>
     <main>
         <svg></svg>
@@ -11,12 +13,12 @@
         <p style="font-weight: bold">
             <가본 나라>
         </p>
-        <ol>
+        <ul>
             {% for li in liArray %}
             <li>{{li|safe}}</li>
             <!-- by safe filter, string to html -->
             {% endfor %}
-        </ol>
+        </ul>
     </aside>
 </section>
 

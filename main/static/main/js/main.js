@@ -122,9 +122,9 @@ function filterIt(searchValue) {      // searchValue 를 name으로 갖는 objec
 // <array handling 파트>
 
 const gLayer = document.querySelector('g')
-const ol = document.querySelector('ol')
+const ul = document.querySelector('ul')
 // console.log(gLayer);
-// console.log(ol);
+// console.log(ul);
 const countriesArray = [];
 // const liArray = [];
 
@@ -162,7 +162,7 @@ function addCountry (event,name,code) {
     url = filterIt(name)[0].url
     nameKr = filterIt(name)[0].nameKr
     li.innerHTML = `<img src="${url}" alt=${name}> ${nameKr}`
-    ol.appendChild(li);
+    ul.appendChild(li);
 
     // liArray.push(li.innerHTML);
 
@@ -184,7 +184,7 @@ function removeCountry (name,code) {
     
     //리스트에서 삭제
     const li = document.querySelector(`li.${code}`)
-    ol.removeChild(li);
+    ul.removeChild(li);
 
     let innerHTML = li.innerHTML
     
@@ -225,7 +225,7 @@ function hover_listener (li,name,code) {
         span = ' <span>🗑️</span>'
         li.innerHTML += span
 
-        const can = document.querySelector('ol span')
+        const can = document.querySelector('ul span')
         can.addEventListener('click', (event) => {
             removeCountry(name,code)
         })
@@ -252,7 +252,7 @@ function kakaoInit() {
         content: {
           title: "여최몇?",
           description:
-            "그 동안 여행했던 나라를 모두 선택해주세요! 재미있는 통계 결과를 알려드립니다.",
+            "'내 해외여행 경력은 상위 몇%일까?' '다른 사람들은 어느 나라를 많이 여행할까?' 그 동안 여행했던 나라를 모두 선택해주세요! 재미있는 통계 결과를 알려드립니다.",
           imageUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_Map_Blank.svg/2753px-World_Map_Blank.svg.png",
           link: {
@@ -286,8 +286,8 @@ function copy_to_clipboard() {
 function init() {
     // result로 가서 countriesArray가 있으면(=result 페이지로 확인되면) result에 필요한 함수, 아니면 아래 listener 실행하기
     if (document.querySelector('#countriesArray')) {  
-        location.href="#";
-        location.href="#result";    // 가독성 위해 결과 섹션으로 자동 이동!
+        // location.href="#";
+        // location.href="#result";    // 가독성 위해 결과 섹션으로 자동 이동!
     }   
     else {
         gLayer_listener();

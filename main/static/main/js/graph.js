@@ -46,9 +46,9 @@ fetch("/static/main/js/data.json")
                 },
 
                 options: {
-                    indexAxis: 'y',
+                    // indexAxis: 'y',
                     scales: {
-                        x: {
+                        y: {
                             title: {
                                 display: true,
                                 text: '%',
