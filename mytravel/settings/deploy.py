@@ -13,7 +13,7 @@ from .base import *
 
 
 def read_secret(secret_file):
-    file = open('/home/letsgo247/secrets/' + secret_file)
+    file = open('/run/secrets/' + secret_file)
     secret = file.read()
     secret = secret.rstrip().lstrip()
     file.close()
