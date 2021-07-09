@@ -46,6 +46,8 @@ fetch("/static/main/js/data.json")
                 },
 
                 options: {
+                    // responsive: false,
+                    maintainAspectRatio: false,
                     // indexAxis: 'y',
                     scales: {
                         y: {

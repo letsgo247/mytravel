@@ -140,6 +140,7 @@ canvas {
     width:70vw;
     display: inline-block;
     max-width:800px;
+    min-height: 350px;
 }
 
 
@@ -229,21 +230,22 @@ a img {
     
     .ment-container {
         font-size: 1.2rem;
-        margin-top:1rem;
+        margin-top: 1rem;
     }
     
     .chart-container {
         position: relative;
-        width: 90vw;
         display: inline-block;
+        width: 90vw;
         max-width:400px;
         margin-top: 7rem;
     }
     
     .rankChart-container {
         position: relative;
-        width:90vw;
         display: inline-block;
+        width:90vw;
         max-width:600px;
+        min-height: 250px;
     }
 }

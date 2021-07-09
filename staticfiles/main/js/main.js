@@ -254,7 +254,7 @@ function kakaoInit() {
           description:
             "'내 해외여행 경력은 상위 몇%일까?' '다른 사람들은 어느 나라를 많이 여행할까?' 그 동안 여행했던 나라를 모두 선택해주세요! 재미있는 통계 결과를 알려드립니다.",
           imageUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_Map_Blank.svg/2753px-World_Map_Blank.svg.png",
+            "https://letsgo247.net/media/mytravel_cover.png",
           link: {
             webUrl: `${window.location.href}`, // 카카오 PC에서 확인할 때 연결될 웹 url
             mobileWebUrl: `${window.location.href}`, // 카카오 앱에서 확인할 때 연결될 웹 url
