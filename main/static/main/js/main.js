@@ -246,13 +246,17 @@ function kakaoInit() {
     // console.log('실행?')
     console.log(window.location.href)   // 현재 열려있는 url
 
+    ment = document.querySelector('.ment-container')
+    ment_text = ment.innerText;
+    ment_text = ment_text.replace(/\r?\n|\r/g, " ");    // new line 제거하는 테크닉 ㄷㄷ    
+
     Kakao.Link.sendDefault({
         // container: ".kakao-link", // 공유하기 기능을 부여할 DOM container
         objectType: "feed", // 피드타입
         content: {
           title: "여최몇?",
           description:
-            "'내 해외여행 경력은 상위 몇%일까?' '다른 사람들은 어느 나라를 많이 여행할까?' 그 동안 여행했던 나라를 모두 선택해주세요! 재미있는 통계 결과를 알려드립니다.",
+            `${ment_text}`,
           imageUrl:
             "https://letsgo247.net/media/mytravel_cover.png",
           link: {
