@@ -58,10 +58,10 @@ function showTooltip() {
                 // console.log(target.__data__.properties.name);
                 // console.log(filterIt(target.__data__.properties.name))
                 let obj = filterIt(target.__data__.properties.name)[0]
-                // console.log(obj);
+                console.log(document.querySelector('.hover-info'));
                 tooltipSelection
-                    .style('top', `${pageY + 20}px`)
-                    .style('left', `${pageX - 10}px`)
+                    .style('top', `${pageY - 50}px`)
+                    .style('left', `${pageX + 20}px`)
                     .style('z-index', 100)
                     .html(`<img src="${obj.url}" alt=${obj.name}> ${obj.nameKr} (${obj.name})`)  //__data__는... 대충 target을 만든 data를 출력해줌?;;
             })
@@ -244,7 +244,7 @@ Kakao.init('84d8fd6fde6bfa9abdb90d8b5557c9d6');
 
 function kakaoInit() {
     // console.log('실행?')
-    console.log(window.location.href)   // 현재 열려있는 url
+    // console.log(window.location.href)   // 현재 열려있는 url
 
     ment = document.querySelector('.ment-container')
     ment_text = ment.innerText;
