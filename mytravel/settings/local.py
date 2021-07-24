@@ -36,3 +36,5 @@ DATABASES = {
         'NAME': BASE_DIR / 'DB/db.sqlite3',
     }
 }
+
+print(DATABASES)
